@@ -14,12 +14,12 @@
           target="_blank"
         >
           <img
-            src="assets//img/logo-ct.png"
+            src="assets/img/rusilogo.png"
             class="navbar-brand-img h-100"
             alt="main_logo"
           />
           <span class="ms-1 font-weight-bold text-white"
-            >Material Dashboard 2</span
+            >OLMSRM</span
           >
         </a>
       </div>
@@ -44,6 +44,26 @@
                 <i class="material-icons opacity-10">dashboard</i>
               </div>
               <span class="nav-link-text ms-1">Users</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="brandsTable.php">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text ms-1">Brands</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="loansTable.php">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text ms-1">Loans</span>
             </a>
           </li>
         </ul>
