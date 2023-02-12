@@ -11,8 +11,8 @@
       sizes="76x76"
       href="assets/img/apple-icon.png"
     />
-    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-    <title>Material Dashboard 2 by Creative Tim</title>
+    <link rel="icon" type="image/png" href="assets/img/rusilogo.png" />
+    <title>Online Loan System for Rusi Motorcycle</title>
     <!--     Fonts and icons     -->
     <link
       rel="stylesheet"
