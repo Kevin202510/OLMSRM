@@ -44,7 +44,29 @@
                       </th>
                     </tr>
                   </thead>
-                  <tbody> </tbody>
+                  <tbody>
+                    <?php
+                          include_once('../API/DBCRUDAPI.php');
+                          $newAPIFunctions = new DBCRUDAPI();
+                          $newAPIFunctions->select("brands","*");
+                          $brandsList = $newAPIFunctions->sql;
+                    
+                          $index = 1;
+                          while ($data = mysqli_fetch_assoc($brandsList)){
+                    ?>
+
+                    <tr>
+                      <td class="align-middle">
+                        <div class="d-flex px-2 py-1">
+                            <h6 class="mb-0 text-sm"><?php echo $index; ?></h6>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center"><img src="assets/img/brands/<?php echo $data["brand_logo"]; ?>" class="img-thumbnail" style="max-width:100px;"></td>
+                      <td class="align-middle text-center"><span class="text-secondary text-xs font-weight-bold"><?php echo $data["brand_display_name"]; ?></span></td>
+                      <td class="align-middle text-center"><button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="<?php echo $data['id']; ?>">Edit</button><button type="button" class="btn btn-danger" data-id="<?php echo $data['id']; ?>" id="delete">Delete</button></td>
+                    </tr>
+                    <?php $index++;} ?>
+                  </tbody>
                 </table>
               </div>
             </div>
