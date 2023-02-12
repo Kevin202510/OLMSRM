@@ -37,6 +37,16 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link text-white" href="rolesTable.php">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text ms-1">Roles</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link text-white" href="usersTable.php">
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
@@ -66,6 +76,37 @@
               <span class="nav-link-text ms-1">Loans</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="motorcyclesTable.php">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text ms-1">Motorcycle</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="freebiesTable.php">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text ms-1">Freebies</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="branchesTable.php">
+              <div
+                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="material-icons opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text ms-1">Branches</span>
+            </a>
+          </li>
+          
         </ul>
       </div>
     </aside>
