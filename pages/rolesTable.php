@@ -20,33 +20,35 @@
             </div>
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
+                <table class="table">
+                  <thead class="table-light">
                     <tr>
-                      <th
-                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                      >
-                        Author
-                      </th>
-                      <th
-                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
-                      >
-                        Function
-                      </th>
-                      <th
-                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                      >
-                        Status
-                      </th>
-                      <th
-                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-                      >
-                        Employed
-                      </th>
-                      <th class="text-secondary opacity-7"></th>
+                      <th>#</th>
+                      <th>Display Name</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
-                  <tbody></tbody>
+                  <tbody>
+                    <?php
+                          include_once('../API/DBCRUDAPI.php');
+                          $newAPIFunctions = new DBCRUDAPI();
+                          $newAPIFunctions->select("roles","*");
+                          $rolesList = $newAPIFunctions->sql;
+                    
+                          $index = 1;
+                          while ($data = mysqli_fetch_assoc($rolesList)){
+                    ?>
+                    <tr>
+                      <td class="align-middle">
+                        <?php echo $index; ?>
+                      </td>
+                      <td><?php echo $data['role_display_name'] ?></td>
+                      <td><button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="<?php echo $data['role_id']; ?>">Edit</button></td>
+                    </tr>
+                    <?php $index++;
+                        } 
+                    ?>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -56,4 +58,5 @@
       </div>
     </div>
   </main>
+  <script src="roles/roles.js"></script>
   <?php include_once('template/footer.php'); ?>
