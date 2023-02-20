@@ -63,11 +63,29 @@
                       </td>
                       <td class="align-middle text-center"><img src="assets/img/brands/<?php echo $data["brand_logo"]; ?>" class="img-thumbnail" style="max-width:100px;"></td>
                       <td class="align-middle text-center"><span class="text-secondary text-xs font-weight-bold"><?php echo $data["brand_display_name"]; ?></span></td>
-                      <td class="align-middle text-center"><button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="<?php echo $data['brand_id']; ?>">Edit</button><button type="button" class="btn btn-danger" data-id="<?php echo $data['brand_id']; ?>" id="delete">Delete</button></td>
+                      <td class="align-middle text-center"><button style="margin-right:5px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $data['id']; ?>">Edit</button><button type="button" class="btn btn-danger" data-id="<?php echo $data['id']; ?>" id="delete">Delete</button></td>
                     </tr>
                     <?php $index++;} ?>
                   </tbody>
                 </table>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
