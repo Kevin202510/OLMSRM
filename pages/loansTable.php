@@ -10,11 +10,12 @@
       <div class="row">
         <div class="col-12">
           <div class="card my-4">
-            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div
-                class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3"
-              >
-                <h6 class="text-white text-capitalize ps-3">Loans table</h6>
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="d-flex justify-content-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">Loans Table</h6>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Add Loans
+                </button>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -321,6 +322,7 @@
               </div>
             </div>
           </div>
+          <?php include('loans/modal.php'); ?>
         </div>
       </div>
     </div>
