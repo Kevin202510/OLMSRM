@@ -63,7 +63,7 @@
                       </td>
                       <td class="align-middle text-center"><img src="assets/img/brands/<?php echo $data["brand_logo"]; ?>" class="img-thumbnail" style="max-width:100px;"></td>
                       <td class="align-middle text-center"><span class="text-secondary text-xs font-weight-bold"><?php echo $data["brand_display_name"]; ?></span></td>
-                      <td class="align-middle text-center"><button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="<?php echo $data['id']; ?>">Edit</button><button type="button" class="btn btn-danger" data-id="<?php echo $data['id']; ?>" id="delete">Delete</button></td>
+                      <td class="align-middle text-center"><button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="<?php echo $data['brand_id']; ?>">Edit</button><button type="button" class="btn btn-danger" data-id="<?php echo $data['brand_id']; ?>" id="delete">Delete</button></td>
                     </tr>
                     <?php $index++;} ?>
                   </tbody>
