@@ -10,11 +10,11 @@
             <input type="text" name="brand_id" id="brand_id">
             <div class="mb-3">
                 <label class="form-label">brand_display_name</label>
-                <input type="text" class="form-control" id="role_display_name" name="role_display_name" id="role_display_name" aria-describedby="emailHelp" placeholder="Display Name" style="background-color:gray;">
+                <input type="text" class="form-control" id="brand_display_name" name="brand_display_name" aria-describedby="emailHelp" placeholder="Display Name" style="background-color:gray;">
             </div>
             <div class="mb-3">
                 <label class="form-label">brand_logo</label>
-                <input type="text" class="form-control" id="role_display_name" name="role_display_name" id="role_display_name" aria-describedby="emailHelp" placeholder="Display Name" style="background-color:gray;">
+                <input type="text" class="form-control" name="brand_logo" id="brand_logo" aria-describedby="emailHelp" placeholder="Display Name" style="background-color:gray;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
