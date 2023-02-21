@@ -6,15 +6,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="post" id="rolesForm" action="roles/rolesCrudFunction.php">
-            <input type="text" name="role_id" id="role_id">
+        <form method="post" id="rolesForm">
+            <input type="hidden" name="role_id" id="role_id">
             <div class="mb-3">
                 <label class="form-label">Display Name</label>
                 <input type="text" class="form-control" id="role_display_name" name="role_display_name" id="role_display_name" aria-describedby="emailHelp" placeholder="Display Name" style="background-color:gray;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" name="addNew" id="btn-mul" class="btn btn-primary">Save changes</button>
+                <button type="button" name="addNew" id="btn-mul" class="btn btn-primary">Save changes</button>
             </div>
         </form>
       </div>

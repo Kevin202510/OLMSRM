@@ -43,7 +43,10 @@
                         <?php echo $index; ?>
                       </td>
                       <td><?php echo $data['role_display_name'] ?></td>
-                      <td><button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="<?php echo $data['role_id']; ?>">Edit</button></td>
+                      <td>
+                        <button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="<?php echo $data['role_id']; ?>">Edit</button>
+                        <button style="margin-right:5px;" type="button" class="btn btn-primary" id="delete" data-id="<?php echo $data['role_id']; ?>">Delete</button>
+                      </td>
                     </tr>
                     <?php $index++;
                         } 

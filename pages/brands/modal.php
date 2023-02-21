@@ -2,16 +2,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Roles</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Brands</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="post" id="rolesForm" action="roles/rolesCrudFunction.php">
+        <form method="post" id="brandsForm">
             <input type="text" name="brand_id" id="brand_id">
-            <div class="mb-3">
-                <label class="form-label">Display Name</label>
-                <input type="text" class="form-control" id="role_display_name" name="role_display_name" id="role_display_name" aria-describedby="emailHelp" placeholder="Display Name" style="background-color:gray;">
-            </div>
             <div class="mb-3">
                 <label class="form-label">brand_display_name</label>
                 <input type="text" class="form-control" id="role_display_name" name="role_display_name" id="role_display_name" aria-describedby="emailHelp" placeholder="Display Name" style="background-color:gray;">

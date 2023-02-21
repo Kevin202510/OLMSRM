@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("body").on("click", "#edit", function (e) {
     var idss = $(e.currentTarget).data("id");
     $.post(
-      "roles/rolesCrudFunction.php",
+      "brands/brandsCrudFunction.php",
       { role_id: idss },
       function (data, status) {
         var datas = JSON.parse(data);
@@ -23,7 +23,7 @@ $(document).ready(function () {
     let postname = $("#btn-mul").attr("name");
     if (postname === "addNew") {
       $.post(
-        "roles/rolesCrudFunction.php",
+        "brands/brandsCrudFunction.php",
         { role_display_name: $("#role_display_name").val(), addNew: "new" },
         function (data, status) {
           if (status) {
@@ -42,7 +42,7 @@ $(document).ready(function () {
       );
     } else {
       $.post(
-        "roles/rolesCrudFunction.php",
+        "brands/brandsCrudFunction.php",
         {
           role_display_name: $("#role_display_name").val(),
           role_id: $("#role_id").val(),
@@ -80,7 +80,7 @@ $(document).ready(function () {
     }).then((result) => {
       if (result.isConfirmed) {
         $.post(
-          "roles/rolesCrudFunction.php",
+          "brands/brandsCrudFunction.php",
           { role_id: idss, delete: "del" },
           function (data, status) {
             if (status) {
