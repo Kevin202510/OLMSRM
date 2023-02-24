@@ -1,4 +1,54 @@
 $(document).ready(function () {
+  tableWriter();
+
+  function tableWriter() {
+    $.get(
+      "users/usersCrudFunction.php",
+      { getData: "getData" },
+      function (data, status) {
+        var datas = JSON.parse(data);
+        $.each(datas, function (index, itemData) {
+          $("#main-table").append(
+            "<tr>" +
+              '<td class="align-middle">' +
+              parseInt(index + 1) +
+              "</td>" +
+              "<td>" +
+              itemData.role_display_name +
+              "</td>" +
+              "<td>" +
+              itemData.user_fname +
+              " " +
+              itemData.user_mname +
+              " " +
+              itemData.user_lname +
+              "</td>" +
+              "<td>" +
+              itemData.user_address +
+              "</td>" +
+              "<td>" +
+              itemData.user_contact +
+              "</td>" +
+              "<td>" +
+              itemData.user_DOB +
+              "</td>" +
+              "<td>" +
+              itemData.user_email +
+              "</td>" +
+              "<td>" +
+              '<button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="' +
+              itemData.user_id +
+              '">Edit</button>' +
+              '<button style="margin-right:5px;" type="button" class="btn btn-primary" id="delete" data-id="' +
+              itemData.user_id +
+              '">Delete</button>' +
+              "</td>" +
+              "</tr>"
+          );
+        });
+      }
+    );
+  }
   $("body").on("click", "#edit", function (e) {
     var idss = $(e.currentTarget).data("id");
     // alert(idss);
@@ -24,7 +74,7 @@ $(document).ready(function () {
 
     // $("#myModalLabel").html("Update User");
     $("#btn-mul").attr("name", "update");
-    $("#btn-mul").html("Update Role");
+    $("#btn-mul").html("Update");
     $("#exampleModal").modal("show");
   });
 
@@ -58,7 +108,8 @@ $(document).ready(function () {
               timer: 1500,
             });
             window.setTimeout(function () {
-              location.reload();
+              $("#main-table").empty();
+              tableWriter();
             }, 1000);
           }
         }
@@ -90,7 +141,8 @@ $(document).ready(function () {
               timer: 1500,
             });
             window.setTimeout(function () {
-              location.reload();
+              $("#main-table").empty();
+              tableWriter();
             }, 1000);
           }
         }
