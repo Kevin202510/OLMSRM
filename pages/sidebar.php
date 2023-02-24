@@ -22,7 +22,7 @@
                 Management
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="rolesTable.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Roles</span></a>
             </li>
@@ -30,6 +30,27 @@
                 <a class="nav-link" href="usersTable.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Users</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="brandsTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Brands</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="freebiesTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Freebies</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="loansTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Loans</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="motorcyclesTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Motorcycles</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
