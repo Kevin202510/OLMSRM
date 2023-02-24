@@ -1,63 +1,89 @@
 $(document).ready(function () {
+  let entity = "users";
+  let attributes = [
+    "role_display_name",
+    "fullName",
+    "user_address",
+    "user_contact",
+    "user_DOB",
+    "user_email",
+  ];
+  let model = [];
+
+  let index;
+
   tableWriter();
 
   function tableWriter() {
+    index = parseInt($("#table-main tr").length) + 1;
     $.get(
-      "users/usersCrudFunction.php",
+      "" + entity + "/usersCrudFunction.php",
       { getData: "getData" },
       function (data, status) {
         var datas = JSON.parse(data);
-        $.each(datas, function (index, itemData) {
-          $("#main-table").append(
-            "<tr>" +
-              '<td class="align-middle">' +
-              parseInt(index + 1) +
-              "</td>" +
-              "<td>" +
-              itemData.role_display_name +
-              "</td>" +
-              "<td>" +
-              itemData.user_fname +
-              " " +
-              itemData.user_mname +
-              " " +
-              itemData.user_lname +
-              "</td>" +
-              "<td>" +
-              itemData.user_address +
-              "</td>" +
-              "<td>" +
-              itemData.user_contact +
-              "</td>" +
-              "<td>" +
-              itemData.user_DOB +
-              "</td>" +
-              "<td>" +
-              itemData.user_email +
-              "</td>" +
-              "<td>" +
-              '<button style="margin-right:5px;" type="button" class="btn btn-primary" id="edit" data-id="' +
-              itemData.user_id +
-              '">Edit</button>' +
-              '<button style="margin-right:5px;" type="button" class="btn btn-primary" id="delete" data-id="' +
-              itemData.user_id +
-              '">Delete</button>' +
-              "</td>" +
-              "</tr>"
-          );
+        $.each(datas, function (index, value) {
+          model.push(value);
         });
+        model.forEach((models) => writer(models));
       }
     );
   }
+
+  function writer(modelss) {
+    let tr = $("<tr>");
+    $("<td>", { html: parseInt(index++) }).appendTo(tr);
+    const attriMap = new Map(Object.entries(modelss));
+    attributes.forEach((attri) => {
+      if (attri == "fullName") {
+        $("<td>", {
+          class: "text-wrap",
+          html:
+            attriMap.get("user_fname") +
+            " " +
+            attriMap.get("user_mname") +
+            " " +
+            attriMap.get("user_lname"),
+        }).appendTo(tr);
+      } else {
+        $("<td>", { class: "text-wrap", html: attriMap.get(attri) }).appendTo(
+          tr
+        );
+      }
+    });
+
+    let td = $("<td>");
+    let group = $("<div>", { class: "btn-group" });
+    $("<button>", {
+      "data-id": modelss.user_id,
+      class: "btn btn-primary",
+      id: "edit",
+      html: "Edit",
+    }).appendTo(group);
+
+    $("<button>", {
+      "data-id": modelss.user_id,
+      class: "btn btn-danger",
+      id: "delete",
+      html: "Delete",
+    }).appendTo(group);
+
+    group.appendTo(td);
+    td.appendTo(tr);
+    $("#main-table").append(tr);
+  }
+
+  $("#exampleModal").on("hide.bs.modal", function (e) {
+    $("#myModalLabel").html("Add User");
+  });
+
   $("body").on("click", "#edit", function (e) {
     var idss = $(e.currentTarget).data("id");
     // alert(idss);
     $.post(
-      "users/usersCrudFunction.php",
+      "" + entity + "/usersCrudFunction.php",
       { user_id: idss },
       function (data, status) {
         var datas = JSON.parse(data);
-        // console.log(datas);
         $("#user_id").val(datas.user_id);
         $("#user_role_id").val(datas.user_role_id);
         $("#user_fname").val(datas.user_fname);
@@ -72,7 +98,7 @@ $(document).ready(function () {
       }
     );
 
-    // $("#myModalLabel").html("Update User");
+    $("#myModalLabel").html("Update User");
     $("#btn-mul").attr("name", "update");
     $("#btn-mul").html("Update");
     $("#exampleModal").modal("show");
@@ -84,7 +110,7 @@ $(document).ready(function () {
     let postname = $("#btn-mul").attr("name");
     if (postname === "addNew") {
       $.post(
-        "users/usersCrudFunction.php",
+        "" + entity + "/usersCrudFunction.php",
         {
           user_role_id: $("#user_role_id").val(),
           user_fname: $("#user_fname").val(),
@@ -109,6 +135,7 @@ $(document).ready(function () {
             });
             window.setTimeout(function () {
               $("#main-table").empty();
+              model.length = 0;
               tableWriter();
             }, 1000);
           }
@@ -116,7 +143,7 @@ $(document).ready(function () {
       );
     } else {
       $.post(
-        "users/usersCrudFunction.php",
+        "" + entity + "/usersCrudFunction.php",
         {
           user_id: $("#user_id").val(),
           user_role_id: $("#user_role_id").val(),
@@ -142,6 +169,7 @@ $(document).ready(function () {
             });
             window.setTimeout(function () {
               $("#main-table").empty();
+              model.length = 0;
               tableWriter();
             }, 1000);
           }
@@ -164,7 +192,7 @@ $(document).ready(function () {
     }).then((result) => {
       if (result.isConfirmed) {
         $.post(
-          "users/usersCrudFunction.php",
+          "" + entity + "/usersCrudFunction.php",
           { user_id: idss, delete: "del" },
           function (data, status) {
             if (status) {
@@ -175,8 +203,9 @@ $(document).ready(function () {
                 showConfirmButton: false,
                 timer: 1500,
               });
-
-              location.reload();
+              $("#main-table").empty();
+              model.length = 0;
+              tableWriter();
             }
           }
         );
