@@ -37,12 +37,13 @@ $(document).ready(function () {
       if (attri == "fullName") {
         $("<td>", {
           class: "text-wrap",
-          html:
+          html: (
             attriMap.get("user_fname") +
             " " +
             attriMap.get("user_mname") +
             " " +
-            attriMap.get("user_lname"),
+            attriMap.get("user_lname")
+          ).toUpperCase(),
         }).appendTo(tr);
       } else {
         $("<td>", { class: "text-wrap", html: attriMap.get(attri) }).appendTo(
@@ -53,6 +54,14 @@ $(document).ready(function () {
 
     let td = $("<td>");
     let group = $("<div>", { class: "btn-group" });
+
+    $("<button>", {
+      "data-id": modelss.user_id,
+      class: "btn btn-success",
+      id: "view",
+      html: "View",
+    }).appendTo(group);
+
     $("<button>", {
       "data-id": modelss.user_id,
       class: "btn btn-primary",
