@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2023 at 02:11 PM
+-- Generation Time: Feb 27, 2023 at 03:43 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `brands` (
-  `brand_id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `brand_logo` varchar(255) DEFAULT NULL,
   `brand_display_name` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -40,15 +40,10 @@ CREATE TABLE `brands` (
 -- Dumping data for table `brands`
 --
 
-INSERT INTO `brands` (`brand_id`, `brand_logo`, `brand_display_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `brands` (`id`, `brand_logo`, `brand_display_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'honda.jpg', 'Honda', NULL, NULL, NULL),
 (2, 'honda.jpg', 'Kawasaki', NULL, NULL, NULL),
-(3, 'honda.jpg', 'Yamaha', NULL, NULL, NULL),
-(4, 'asdasdasd', '23', NULL, NULL, NULL),
-(5, 'asdasdasd', '123', NULL, NULL, NULL),
-(6, 'asdasd', 'asdas', NULL, NULL, NULL),
-(7, 'asdasd', 'asdas', NULL, NULL, NULL),
-(8, 'asdas', 'asdasdasd', NULL, NULL, NULL);
+(3, 'honda.jpg', 'Yamahas', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,7 +78,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `products` (
-  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `product_brand_id` bigint(20) UNSIGNED NOT NULL,
   `product_supplier_id` bigint(20) UNSIGNED NOT NULL,
   `product_code` varchar(255) NOT NULL,
@@ -119,7 +114,7 @@ CREATE TABLE `productsales` (
 --
 
 CREATE TABLE `roles` (
-  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `role_display_name` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -130,7 +125,7 @@ CREATE TABLE `roles` (
 -- Dumping data for table `roles`
 --
 
-INSERT INTO `roles` (`role_id`, `role_display_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `roles` (`id`, `role_display_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Administrator', NULL, NULL, NULL),
 (2, 'Branch Manager', NULL, NULL, NULL),
 (3, 'Sales Agent', NULL, NULL, NULL),
@@ -145,7 +140,7 @@ INSERT INTO `roles` (`role_id`, `role_display_name`, `created_at`, `updated_at`,
 --
 
 CREATE TABLE `suppliers` (
-  `supplier_id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `supplier_name` varchar(255) NOT NULL,
   `supplier_company_name` varchar(255) NOT NULL,
   `supplier_contact` varchar(255) NOT NULL,
@@ -159,7 +154,7 @@ CREATE TABLE `suppliers` (
 -- Dumping data for table `suppliers`
 --
 
-INSERT INTO `suppliers` (`supplier_id`, `supplier_name`, `supplier_company_name`, `supplier_contact`, `supplier_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `suppliers` (`id`, `supplier_name`, `supplier_company_name`, `supplier_contact`, `supplier_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Ralph Keith Villanueva', 'Rusi Gapan', '723942897479', 'Gapan NE', NULL, NULL, NULL),
 (2, 'Jhonhil Bago', 'Bago Motoparts', '283974234872', 'Pias General Tinio NE', NULL, NULL, NULL);
 
@@ -192,7 +187,7 @@ CREATE TABLE `transactions` (
 --
 
 CREATE TABLE `users` (
-  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `user_role_id` bigint(20) UNSIGNED NOT NULL,
   `user_fname` varchar(255) NOT NULL,
   `user_mname` varchar(255) DEFAULT NULL,
@@ -212,7 +207,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_role_id`, `user_fname`, `user_mname`, `user_lname`, `user_address`, `user_contact`, `user_DOB`, `user_email`, `user_username`, `user_password`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `users` (`id`, `user_role_id`, `user_fname`, `user_mname`, `user_lname`, `user_address`, `user_contact`, `user_DOB`, `user_email`, `user_username`, `user_password`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'superadmin@gmail.com', 'superadmin', 'password', NULL, NULL, NULL),
 (2, 2, 'myna', '', 'bulawit', 'Conception General Tinio NE.', '09268123667', 'Feb-14-2002', 'branchmanager@gmail.com', 'branchmanager', 'password', NULL, NULL, NULL);
 
@@ -223,7 +218,7 @@ INSERT INTO `users` (`user_id`, `user_role_id`, `user_fname`, `user_mname`, `use
 --
 
 CREATE TABLE `vouchers` (
-  `voucher_id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `voucher_code` varchar(255) NOT NULL,
   `voucher_description` varchar(255) NOT NULL,
   `voucher_discount` varchar(255) NOT NULL,
@@ -240,7 +235,7 @@ CREATE TABLE `vouchers` (
 -- Indexes for table `brands`
 --
 ALTER TABLE `brands`
-  ADD PRIMARY KEY (`brand_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -252,7 +247,7 @@ ALTER TABLE `migrations`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `products_product_supplier_id_foreign` (`product_supplier_id`);
 
 --
@@ -265,13 +260,13 @@ ALTER TABLE `productsales`
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`role_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  ADD PRIMARY KEY (`supplier_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `transactions`
@@ -285,7 +280,7 @@ ALTER TABLE `transactions`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_user_email_unique` (`user_email`),
   ADD UNIQUE KEY `users_user_username_unique` (`user_username`),
   ADD KEY `users_user_role_id_foreign` (`user_role_id`);
@@ -294,7 +289,7 @@ ALTER TABLE `users`
 -- Indexes for table `vouchers`
 --
 ALTER TABLE `vouchers`
-  ADD PRIMARY KEY (`voucher_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -304,7 +299,7 @@ ALTER TABLE `vouchers`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `brand_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -316,7 +311,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `productsales`
@@ -328,13 +323,13 @@ ALTER TABLE `productsales`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `supplier_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transactions`
@@ -346,13 +341,13 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vouchers`
 --
 ALTER TABLE `vouchers`
-  MODIFY `voucher_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -362,20 +357,20 @@ ALTER TABLE `vouchers`
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_product_supplier_id_foreign` FOREIGN KEY (`product_supplier_id`) REFERENCES `suppliers` (`supplier_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `products_product_supplier_id_foreign` FOREIGN KEY (`product_supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `transactions`
 --
 ALTER TABLE `transactions`
-  ADD CONSTRAINT `transactions_transaction_product_id_foreign` FOREIGN KEY (`transaction_product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `transactions_transaction_voucher_id_foreign` FOREIGN KEY (`transaction_voucher_id`) REFERENCES `vouchers` (`voucher_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `transactions_transaction_product_id_foreign` FOREIGN KEY (`transaction_product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `transactions_transaction_voucher_id_foreign` FOREIGN KEY (`transaction_voucher_id`) REFERENCES `vouchers` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_user_role_id_foreign` FOREIGN KEY (`user_role_id`) REFERENCES `roles` (`role_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `users_user_role_id_foreign` FOREIGN KEY (`user_role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
