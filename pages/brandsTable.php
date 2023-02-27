@@ -14,7 +14,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>List of Brands</h4>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                <button type="button" class="btn btn-primary" id="create-new">
                                     Add Brand
                                 </button>
                             </div>
@@ -42,5 +42,5 @@
             <?php include('footer.php'); ?>
         </div>
     </div>
-<script src="brands/brands.js"></script>
+<script type="module" src="brands/brands.js"></script>
 <?php include('script.php'); ?>
