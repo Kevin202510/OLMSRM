@@ -3,15 +3,14 @@ import fetch from "../modules/fetcher.js";
 $("body").on("click", "#edit", async (e) =>
   state.show($(e.currentTarget).data("id"))
 );
-$("body").on("click", ".btn-delete", (e) =>
-  state.destroy($(e.currentTarget).data("id"))
+$("body").on("click", "#delete", (e) =>
+  state.delete($(e.currentTarget).data("id"))
 );
 
 const state = {
   entity: "brands",
   attributes: ["brand_display_name", "brand_logo"],
   model: [],
-  idname: "brand_id",
   activeIndex: 0,
   btnSave: document.getElementById("btn-mul"),
   inputMethod: document.getElementById("method"),
@@ -32,9 +31,7 @@ const state = {
         $.each(datas, function (index, value) {
           state.model.push(value);
         });
-        state.model.forEach((models) =>
-          fetch.writer(state.attributes, models, state.idname)
-        );
+        state.model.forEach((models) => fetch.writer(state.attributes, models));
       }
     );
   },
@@ -71,6 +68,16 @@ const state = {
       state.model = [];
       state.ask();
       $("#exampleModal").modal("hide");
+    }
+  },
+  delete: async (i) => {
+    // alert(i);
+    let params = { id: i, delete: "delete" };
+    let res = await fetch.remove(state.entity, params);
+    if (res) {
+      $("#main-table").empty();
+      state.model = [];
+      state.ask();
     }
   },
 };

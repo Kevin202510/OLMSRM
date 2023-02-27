@@ -39,15 +39,14 @@ const showModal = () => {
   $("#exampleModal").modal("show");
 };
 
-const writer = (attributes, modelss, idname) => {
-  console.log(modelss);
+const writer = (attributes, modelss) => {
   var index = $("#main-table tr").length;
   index =
-    $(`#model-${modelss.idname}`).length == 0
+    $(`#model-${modelss.id}`).length == 0
       ? index
-      : $(`#model-${modelss.idname}`).data("index");
+      : $(`#model-${modelss.id}`).data("index");
   let tr = $("<tr>", {
-    id: `model-${modelss.brand_id}`,
+    id: `model-${modelss.id}`,
     "data-index": index,
   });
   $("<td>", { html: `${index + 1}.` }).appendTo(tr);
@@ -66,7 +65,7 @@ const writer = (attributes, modelss, idname) => {
   }).appendTo(group);
 
   $("<button>", {
-    "data-id": index,
+    "data-id": modelss.id,
     class: "btn btn-danger",
     id: "delete",
     html: "Delete",
@@ -86,7 +85,7 @@ const writer = (attributes, modelss, idname) => {
 const showOnModal = (model) => {
   $("#set-model").trigger("reset");
   $("#modal-title").html(`Update`);
-  console.log(model);
+  // console.log(model);
   Object.keys(model).map((key) => {
     if ($(`[name='${key}']`).length !== 0 && key != "avatar") {
       if (typeof model[key] == "boolean") {
@@ -133,10 +132,42 @@ const save = async (entity, params) => {
   return model;
 };
 
+const remove = async (entity, params) => {
+  let url = `../pages/${entity}/${entity}CrudFunction.php`;
+  const { value: result } = await swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+    footer: "<a href>CleverTech</a>",
+  });
+  if (result) {
+    const model = await request(url, params, "POST");
+    console.log(model);
+    if (model) {
+      swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Deleted Successfully",
+        showConfirmButton: false,
+        timer: 1500,
+        footer: "<a href>CleverTech</a>",
+      });
+    }
+    return model;
+  } else {
+    return false;
+  }
+};
+
 export default {
   showModal,
   writer,
   showOnModal,
   update,
   save,
+  remove,
 };
