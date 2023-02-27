@@ -111,6 +111,7 @@ const update = async (entity, params) => {
       timer: 1500,
       footer: "<a href>CleverTech</a>",
     });
+    $("#main-table").empty();
   }
   return model;
 };
@@ -128,6 +129,7 @@ const save = async (entity, params) => {
       timer: 1500,
       footer: "<a href>CleverTech</a>",
     });
+    $("#main-table").empty();
   }
   return model;
 };
@@ -144,9 +146,10 @@ const remove = async (entity, params) => {
     confirmButtonText: "Yes, delete it!",
     footer: "<a href>CleverTech</a>",
   });
+
+  // alert(result);
   if (result) {
     const model = await request(url, params, "POST");
-    console.log(model);
     if (model) {
       swal.fire({
         position: "center",
@@ -156,8 +159,9 @@ const remove = async (entity, params) => {
         timer: 1500,
         footer: "<a href>CleverTech</a>",
       });
+      $("#main-table").empty();
+      return model;
     }
-    return model;
   } else {
     return false;
   }

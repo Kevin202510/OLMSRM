@@ -39,6 +39,7 @@ const state = {
     state.btnSave.innerHTML = "Save Changes";
     state.inputMethod.setAttribute("name", "addNew");
     state.btnSave.addEventListener("click", state.save);
+    state.btnSave.removeEventListener("click", state.update);
     fetch.showModal();
   },
   save: async (e) => {
@@ -47,10 +48,9 @@ const state = {
     // console.log(params);
     let model = await fetch.save(state.entity, params);
     if (model) {
-      $("#main-table").empty();
+      $("#exampleModal").modal("hide");
       state.model = [];
       state.ask();
-      $("#exampleModal").modal("hide");
     }
   },
   show: (i) => {
@@ -58,16 +58,16 @@ const state = {
     state.btnSave.innerHTML = "Update Changes";
     state.inputMethod.setAttribute("name", "update");
     state.btnSave.addEventListener("click", state.update);
+    state.btnSave.removeEventListener("click", state.save);
     fetch.showOnModal(state.model[i]);
   },
   update: async () => {
     let params = $("#formData").serializeArray();
     let model = await fetch.update(state.entity, params);
     if (model) {
-      $("#main-table").empty();
+      $("#exampleModal").modal("hide");
       state.model = [];
       state.ask();
-      $("#exampleModal").modal("hide");
     }
   },
   delete: async (i) => {
@@ -75,7 +75,6 @@ const state = {
     let params = { id: i, delete: "delete" };
     let res = await fetch.remove(state.entity, params);
     if (res) {
-      $("#main-table").empty();
       state.model = [];
       state.ask();
     }

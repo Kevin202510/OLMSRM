@@ -49,15 +49,6 @@
             $id = $_POST["id"];
 
             $DBCRUDAPI->delete('products',"id='$id'");
-
-        }else{
-            $dataid = "id=" . $_POST['id'];
-            $DBCRUDAPI->select("products","*",$dataid);
-            $getData = $DBCRUDAPI->sql;
-            $res = array();
-            while($datass = mysqli_fetch_assoc($getData)){
-                $res = $datass;
-            }
             echo json_encode(array("success"=>true));
         }
     }

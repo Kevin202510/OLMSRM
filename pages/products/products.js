@@ -9,9 +9,19 @@ $("body").on("click", "#delete", (e) =>
 
 const state = {
   entity: "products",
-  attributes: ["product_brand_id", "product_supplier_id", "product_code", "product_description", "product_size", "product_purchaseprice", "product_wholesale", "product_saleprice", "product_stocksavail", "product_image"],
+  attributes: [
+    "product_brand_id",
+    "product_supplier_id",
+    "product_code",
+    "product_description",
+    "product_size",
+    "product_purchaseprice",
+    "product_wholesale",
+    "product_saleprice",
+    "product_stocksavail",
+    "product_image",
+  ],
   model: [],
-  idname: "product_id",
   activeIndex: 0,
   btnSave: document.getElementById("btn-mul"),
   inputMethod: document.getElementById("method"),
@@ -32,9 +42,7 @@ const state = {
         $.each(datas, function (index, value) {
           state.model.push(value);
         });
-        state.model.forEach((models) =>
-          fetch.writer(state.attributes, models, state.idname)
-        );
+        state.model.forEach((models) => fetch.writer(state.attributes, models));
       }
     );
   },
@@ -73,18 +81,16 @@ const state = {
       $("#exampleModal").modal("hide");
     }
   },
-    delete: async (i) => {
+  delete: async (i) => {
     // alert(i);
     let params = { id: i, delete: "delete" };
     let res = await fetch.remove(state.entity, params);
     if (res) {
-        $("#main-table").empty();
-        state.model = [];
-        state.ask();
+      $("#main-table").empty();
+      state.model = [];
+      state.ask();
     }
-}
+  },
 };
-
-    
 
 window.addEventListener("load", state.init);
