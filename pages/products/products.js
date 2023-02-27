@@ -50,6 +50,7 @@ const state = {
     state.btnSave.innerHTML = "Save Changes";
     state.inputMethod.setAttribute("name", "addNew");
     state.btnSave.addEventListener("click", state.save);
+    state.btnSave.removeEventListener("click", state.update);
     fetch.showModal();
   },
   save: async (e) => {
@@ -69,6 +70,7 @@ const state = {
     state.btnSave.innerHTML = "Update Changes";
     state.inputMethod.setAttribute("name", "update");
     state.btnSave.addEventListener("click", state.update);
+    state.btnSave.removeEventListener("click", state.save);
     fetch.showOnModal(state.model[i]);
   },
   update: async () => {

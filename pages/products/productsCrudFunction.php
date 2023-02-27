@@ -3,8 +3,10 @@
     include_once('../../API/DBCRUDAPI.php');
     $DBCRUDAPI = new DBCRUDAPI();
 
+    $attributes = ["products.id","products.product_brand_id","brands.brand_display_name","products.product_supplier_id","suppliers.supplier_company_name","products.product_code","products.product_description","products.product_size","products.product_purchaseprice","products.product_wholesale","products.product_saleprice","products.product_stocksavail","products.product_image","products.created_at"];
+    
     if(isset($_GET['getData'])){
-        $DBCRUDAPI->select("products","*");
+        $DBCRUDAPI->selectleftjoin3("products","suppliers","product_supplier_id","brands","product_brand_id",$attributes);
         $data = $DBCRUDAPI->sql;
         $res = array();
         while($datass = mysqli_fetch_assoc($data)){

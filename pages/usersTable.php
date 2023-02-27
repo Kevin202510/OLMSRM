@@ -14,7 +14,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>List of Users</h4>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                <button type="button" class="btn btn-primary" id="create-new">
                                     Add User
                                 </button>
                             </div>
@@ -40,11 +40,9 @@
                     </div>
                     <?php include('users/modal.php'); ?>
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
             <?php include('footer.php'); ?>
         </div>
     </div>
-<script src="users/users.js"></script>
+<script type="module" src="users/users.js"></script>
 <?php include('script.php'); ?>

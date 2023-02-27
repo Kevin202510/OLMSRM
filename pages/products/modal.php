@@ -12,11 +12,41 @@
             <input type="hidden" name="id" id="id">
             <div class="mb-3">
                 <label class="form-label">product_brand_id</label>
-                <input type="text" class="form-control" id="product_brand_id" name="product_brand_id" aria-describedby="emailHelp" placeholder="Display Name" >
+                <select class="form-control" name="product_brand_id" id="product_brand_id">
+                    <option>Choose Brand</option>
+                    <?php
+                            include_once('../API/DBCRUDAPI.php');
+                            $newAPIFunctions = new DBCRUDAPI();
+                            $newAPIFunctions->select("brands","*");
+                            $rolesList = $newAPIFunctions->sql;
+                        
+                            $index = 1;
+                            while ($roles = mysqli_fetch_assoc($rolesList)){
+                    ?>
+
+                    <option value="<?php echo $roles['id']; ?>"><?php echo $roles['brand_display_name']; ?></option>
+
+                    <?php } ?>
+                </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">product_supplier_id</label>
-                <input type="text" class="form-control" id="product_supplier_id" name="product_supplier_id" aria-describedby="emailHelp" placeholder="Display Name" >
+                <select class="form-control" name="product_supplier_id" id="product_supplier_id">
+                    <option>Choose Supplier</option>
+                    <?php
+                            include_once('../API/DBCRUDAPI.php');
+                            $newAPIFunctions = new DBCRUDAPI();
+                            $newAPIFunctions->select("suppliers","*");
+                            $rolesList = $newAPIFunctions->sql;
+                        
+                            $index = 1;
+                            while ($roles = mysqli_fetch_assoc($rolesList)){
+                    ?>
+
+                    <option value="<?php echo $roles['id']; ?>"><?php echo $roles['supplier_company_name']; ?></option>
+
+                    <?php } ?>
+                </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">product_code</label>

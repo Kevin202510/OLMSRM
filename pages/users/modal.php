@@ -8,12 +8,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" id="rolesForm">
-            <input type="hidden" name="user_id" id="user_id">
+        <form method="post" id="formData">
+            <input type="text" name="id" id="id">
+            <input type="hidden" id="method" name="update">
             <div class="mb-3">
                 <label class="form-label">role_id</label>
                 <select class="form-control" name="user_role_id" id="user_role_id">
-                    <option selected>Choose Role</option>
+                    <option>Choose Role</option>
                     <?php
                             include_once('../API/DBCRUDAPI.php');
                             $newAPIFunctions = new DBCRUDAPI();
@@ -24,7 +25,7 @@
                             while ($roles = mysqli_fetch_assoc($rolesList)){
                     ?>
 
-                    <option value="<?php echo $roles['role_id']; ?>"><?php echo $roles['role_display_name']; ?></option>
+                    <option value="<?php echo $roles['id']; ?>"><?php echo $roles['role_display_name']; ?></option>
 
                     <?php } ?>
                 </select>
@@ -67,7 +68,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" name="addNew" id="btn-mul" class="btn btn-primary">Save changes</button>
+                <button type="button" name="addNew" id="btn-mul" class="btn btn-primary">Save changes</button>
             </div>
         </form>
       </div>

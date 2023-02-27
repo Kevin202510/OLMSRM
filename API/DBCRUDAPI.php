@@ -54,8 +54,16 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
-        public function selectleftjoin($table,$table1,$attributename1,$attributename){
-            $sql = "SELECT * FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename";
+        public function selectleftjoin($table,$table1,$attributename1,$attributename,$attributesName=array()){
+            $attributes = implode(',', $attributesName);
+            $sql = "SELECT $attributes FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename";
+
+            $this->sql = $result = $this->mysqli->query($sql);
+        }
+
+        public function selectleftjoin3($table,$table1,$attributename1,$table2,$attributename3,$attributesName=array()){
+            $attributes = implode(',', $attributesName);
+            $sql = "SELECT $attributes FROM $table LEFT JOIN $table1 ON $table1.id = $table.$attributename1 LEFT JOIN $table2 ON $table2.id=$attributename3";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }

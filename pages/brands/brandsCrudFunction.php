@@ -19,7 +19,11 @@
 
             $DBCRUDAPI->insert('brands',['brand_display_name'=>$brand_display_name,'brand_logo'=>$brand_logo]);
 
-            echo json_encode(array("success"=>true));
+             if($DBCRUDAPI){
+                echo json_encode(array("success"=>true));
+            }else{
+                echo json_encode(array("success"=>false));
+            }
             
         }else if(isset($_POST['update'])){
             
@@ -28,7 +32,11 @@
             $brand_display_name = $_POST["brand_display_name"];
 
             $DBCRUDAPI->update('brands',['brand_display_name'=>$brand_display_name,'brand_logo'=>$brand_logo],"id='$id'");
-            echo json_encode(array("success"=>true));
+             if($DBCRUDAPI){
+                echo json_encode(array("success"=>true));
+            }else{
+                echo json_encode(array("success"=>false));
+            }
         }else if(isset($_POST['delete'])){
             
             $id = $_POST["id"];
@@ -37,6 +45,8 @@
 
             if($DBCRUDAPI){
                 echo json_encode(array("success"=>true));
+            }else{
+                echo json_encode(array("success"=>false));
             }
 
         }

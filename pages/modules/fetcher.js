@@ -51,9 +51,22 @@ const writer = (attributes, modelss) => {
   });
   $("<td>", { html: `${index + 1}.` }).appendTo(tr);
   const attriMap = new Map(Object.entries(modelss));
-  attributes.forEach((attri) =>
-    $("<td>", { class: "text-wrap", html: attriMap.get(attri) }).appendTo(tr)
-  );
+  attributes.forEach((attri) => {
+    if (attri == "fullName") {
+      $("<td>", {
+        class: "text-wrap",
+        html: (
+          attriMap.get("user_fname") +
+          " " +
+          attriMap.get("user_mname") +
+          " " +
+          attriMap.get("user_lname")
+        ).toUpperCase(),
+      }).appendTo(tr);
+    } else {
+      $("<td>", { class: "text-wrap", html: attriMap.get(attri) }).appendTo(tr);
+    }
+  });
 
   let td = $("<td>");
   let group = $("<div>", { class: "btn-group" });
