@@ -17,9 +17,9 @@
             $supplier_name = $_POST["supplier_name"];
             $supplier_company_name = $_POST["supplier_company_name"];
             $supplier_contact = $_POST["supplier_contact"];
-            $suppliers_address = $_POST["suppliers_address"];
+            $supplier_address = $_POST["supplier_address"];
 
-            $DBCRUDAPI->insert('suppliers',['supplier_name'=>$supplier_name,'supplier_company_name'=>$supplier_company_name,'supplier_contact'=>$supplier_contact,'suppliers_address'=>$suppliers_address]);
+            $DBCRUDAPI->insert('suppliers',['supplier_name'=>$supplier_name,'supplier_company_name'=>$supplier_company_name,'supplier_contact'=>$supplier_contact,'supplier_address'=>$supplier_address]);
 
             echo json_encode(array("success"=>true));
             
@@ -29,9 +29,9 @@
             $supplier_name = $_POST["supplier_name"];
             $supplier_company_name = $_POST["supplier_company_name"];
             $supplier_contact = $_POST["supplier_contact"];
-            $suppliers_address = $_POST["suppliers_address"];
+            $supplier_address = $_POST["supplier_address"];
 
-            $DBCRUDAPI->update('suppliers',['supplier_name'=>$supplier_name,'supplier_company_name'=>$supplier_company_name,'supplier_contact'=>$supplier_contact,'suppliers_address'=>$suppliers_address],"id='$id'");
+            $DBCRUDAPI->update('suppliers',['supplier_name'=>$supplier_name,'supplier_company_name'=>$supplier_company_name,'supplier_contact'=>$supplier_contact,'supplier_address'=>$supplier_address],"id='$id'");
             echo json_encode(array("success"=>true));
         }else if(isset($_POST['delete'])){
             

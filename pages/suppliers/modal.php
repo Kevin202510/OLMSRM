@@ -9,15 +9,8 @@
       </div>
       <div class="modal-body">
         <form method="post" id="formData">
-            <input type="text" name="id" id="id">
-            <div class="mb-3">
-                <label class="form-label">brand_display_name</label>
-                <input type="text" class="form-control" id="brand_display_name" name="brand_display_name" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">brand_logo</label>
-                <input type="text" class="form-control" id="brand_logo" name="brand_logo" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
+            <input type="hidden" name="id" id="id">
+            <input type="hidden" id="method" name="update">
             <div class="mb-3">
                 <label class="form-label">supplier_name</label>
                 <input type="text" class="form-control" id="supplier_name" name="supplier_name" aria-describedby="emailHelp" placeholder="Display Name" >
@@ -34,7 +27,6 @@
                 <label class="form-label">supplier_address</label>
                 <input type="text" class="form-control" id="supplier_address" name="supplier_address" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
-            <input type="hidden" id="method" name="update">
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" name="addNew" id="btn-mul" class="btn btn-primary">Save changes</button>
