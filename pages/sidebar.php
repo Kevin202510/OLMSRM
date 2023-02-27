@@ -57,6 +57,11 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="suppliersTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Suppliers</span></a>
+            </li>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
