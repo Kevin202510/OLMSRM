@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <form method="post" id="formData">
-            <input type="hidden" name="product_id" id="product_id">
+            <input type="hidden" name="id" id="id">
             <div class="mb-3">
                 <label class="form-label">product_brand_id</label>
                 <input type="text" class="form-control" id="product_brand_id" name="product_brand_id" aria-describedby="emailHelp" placeholder="Display Name" >
