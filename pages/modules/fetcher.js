@@ -28,8 +28,6 @@ const request = async (url, params, method = "GET") => {
     }
 
     return response;
-    // const result = await response.json();
-    // return result;
   } catch (error) {
     console.error(error);
   }
@@ -42,12 +40,14 @@ const showModal = () => {
 };
 
 const writer = (attributes, modelss, idname) => {
+  console.log(modelss);
   var index = $("#main-table tr").length;
   index =
     $(`#model-${modelss.idname}`).length == 0
       ? index
       : $(`#model-${modelss.idname}`).data("index");
   let tr = $("<tr>", {
+    id: `model-${modelss.brand_id}`,
     "data-index": index,
   });
   $("<td>", { html: `${index + 1}.` }).appendTo(tr);
@@ -74,7 +74,13 @@ const writer = (attributes, modelss, idname) => {
 
   group.appendTo(td);
   td.appendTo(tr);
+  // console.log($("#main-table tr").length);
+  // console.log($(`#model-${modelss.brand_id}`).length);
+  // if ($(`#model-${modelss.brand_id}`).length == 0) {
   $("#main-table").append(tr);
+  // } else {
+  //   $(`#model-${modelss.brand_id}`).replaceWith(tr);
+  // }
 };
 
 const showOnModal = (model) => {
@@ -96,18 +102,35 @@ const showOnModal = (model) => {
 const update = async (entity, params) => {
   let url = `../pages/${entity}/${entity}CrudFunction.php`;
   const model = await request(url, params, "POST");
-  if (model == "success") {
-    if (withMsge) {
-      swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Your work has been saved",
-        showConfirmButton: false,
-        timer: 1500,
-        footer: "<a href>CleverTech</a>",
-      });
-    }
+  // console.log(model);
+  if (model) {
+    swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Updated Successfully",
+      showConfirmButton: false,
+      timer: 1500,
+      footer: "<a href>CleverTech</a>",
+    });
   }
+  return model;
+};
+
+const save = async (entity, params) => {
+  let url = `../pages/${entity}/${entity}CrudFunction.php`;
+  const model = await request(url, params, "POST");
+  // console.log(model);
+  if (model) {
+    swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Added Successfully",
+      showConfirmButton: false,
+      timer: 1500,
+      footer: "<a href>CleverTech</a>",
+    });
+  }
+  return model;
 };
 
 export default {
@@ -115,4 +138,5 @@ export default {
   writer,
   showOnModal,
   update,
+  save,
 };

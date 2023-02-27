@@ -14,6 +14,7 @@ const state = {
   idname: "brand_id",
   activeIndex: 0,
   btnSave: document.getElementById("btn-mul"),
+  inputMethod: document.getElementById("method"),
 
   btnNew: document.getElementById("create-new"),
 
@@ -38,19 +39,39 @@ const state = {
     );
   },
   addnew: () => {
+    state.btnSave.innerHTML = "Save Changes";
+    state.inputMethod.setAttribute("name", "addNew");
+    state.btnSave.addEventListener("click", state.save);
     fetch.showModal();
+  },
+  save: async (e) => {
+    e.preventDefault();
+    let params = $("#formData").serializeArray();
+    // console.log(params);
+    let model = await fetch.save(state.entity, params);
+    if (model) {
+      $("#main-table").empty();
+      state.model = [];
+      state.ask();
+      $("#exampleModal").modal("hide");
+    }
   },
   show: (i) => {
     state.activeIndex = i;
     state.btnSave.innerHTML = "Update Changes";
-    state.btnSave.setAttribute("name", "update");
+    state.inputMethod.setAttribute("name", "update");
     state.btnSave.addEventListener("click", state.update);
     fetch.showOnModal(state.model[i]);
   },
   update: async () => {
     let params = $("#formData").serializeArray();
     let model = await fetch.update(state.entity, params);
-    alert(model);
+    if (model) {
+      $("#main-table").empty();
+      state.model = [];
+      state.ask();
+      $("#exampleModal").modal("hide");
+    }
   },
 };
 

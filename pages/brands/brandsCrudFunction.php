@@ -28,6 +28,7 @@
             $brand_display_name = $_POST["brand_display_name"];
 
             $DBCRUDAPI->update('brands',['brand_display_name'=>$brand_display_name,'brand_logo'=>$brand_logo],"brand_id='$brand_id'");
+            echo json_encode(array("success"=>true));
         }else if(isset($_POST['delete'])){
             
             $brand_id = $_POST["brand_id"];
