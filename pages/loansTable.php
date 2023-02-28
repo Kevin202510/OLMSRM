@@ -13,7 +13,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <h4>List of Users</h4>
+                                <h4>List of Loans</h4>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                     Add User
                                 </button>
@@ -24,8 +24,8 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">RoleName</th>
-                                    <th scope="col">Fullname</th>
+                                    <th scope="col">Role Name</th>
+                                    <th scope="col">Full Name</th>
                                     <th scope="col">Address</th>
                                     <th scope="col">Contact</th>
                                     <th scope="col">DOB</th>

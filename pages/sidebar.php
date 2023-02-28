@@ -5,7 +5,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Rusi Motorcycles<sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -56,6 +56,11 @@
                 <a class="nav-link" href="productsTable.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="vouchersTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Vouchers</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="suppliersTable.php">
