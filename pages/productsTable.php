@@ -12,7 +12,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <h4>List of Brands</h4>
+                                <h4>List of Products</h4>
                                 <button type="button" class="btn btn-primary" id="create-new">
                                     Add Products
                                 </button>
@@ -23,16 +23,16 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">product_brand_id</th>
-                                    <th scope="col">product_supplier_id</th>
-                                    <th scope="col">product_code</th>
-                                    <th scope="col">product_description</th>
-                                    <th scope="col">product_size</th>
-                                    <th scope="col">product_purchaseprice</th>
-                                    <th scope="col">product_wholesale</th>
-                                    <th scope="col">product_saleprice</th>
-                                    <th scope="col">product_stocksavail</th>
-                                    <th scope="col">product_image</th>
+                                    <th scope="col">Brand id</th>
+                                    <th scope="col">Supplier id</th>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Purchaseprice</th>
+                                    <th scope="col">Wholesale</th>
+                                    <th scope="col">Saleprice</th>
+                                    <th scope="col">Stocksavail</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Action</th>
                                     </tr>
                                 </thead>

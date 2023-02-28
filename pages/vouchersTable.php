@@ -13,9 +13,9 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <h4>List of Brands</h4>
+                                <h4>List of Vouchers</h4>
                                 <button type="button" class="btn btn-primary" id="create-new">
-                                    Add Brands
+                                    Add Vouchers
                                 </button>
                             </div>
                         </div>
@@ -24,8 +24,10 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Brand Logo</th>
-                                    <th scope="col">Brand Name</th>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Discount</th>
+                                    <th scope="col">Active</th>
                                     <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -34,7 +36,7 @@
                             </table>
                         </div>
                     </div>
-                    <?php include('brands/modal.php'); ?>
+                    <?php include('vouchers/modal.php'); ?>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -42,5 +44,5 @@
             <?php include('footer.php'); ?>
         </div>
     </div>
-<script type="module" src="brands/brands.js"></script>
+<script type="module" src="vouchers/vouchers.js"></script>
 <?php include('script.php'); ?>

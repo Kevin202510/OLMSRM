@@ -13,7 +13,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <h4>List of Brands</h4>
+                                <h4>List of Suppliers</h4>
                                 <button type="button" class="btn btn-primary" id="create-new">
                                     Add Suppliers
                                 </button>
@@ -24,10 +24,10 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">supplier_name</th>
-                                    <th scope="col">supplier_company_name</th>
-                                    <th scope="col">supplier_contact</th>
-                                    <th scope="col">supplier_address</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Contact</th>
+                                    <th scope="col">Address</th>
                                     <th scope="col">Action</th>
                                     </tr>
                                 </thead>

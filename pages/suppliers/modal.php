@@ -21,7 +21,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">supplier_contact</label>
-                <input type="text" class="form-control" id="supplier_contact" name="supplier_contact" aria-describedby="emailHelp" placeholder="Display Name" >
+                <input type="number" class="form-control" id="supplier_contact" name="supplier_contact" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
                 <label class="form-label">supplier_address</label>
