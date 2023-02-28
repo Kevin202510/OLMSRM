@@ -19,6 +19,23 @@
             </li>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
+                Point of Sale
+            </div>
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>POS</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="pointofsale.php">Cashier</a>
+                        <a class="collapse-item" href="buttons.html">Sales</a>
+                    </div>
+                </div>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
                 Management
             </div>
             <li class="nav-item">
