@@ -14,34 +14,60 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>Point Of Sale</h4>
-                                <form class="form-inline my-2 my-lg-0" id="searchForm">
+                                <div class="col-md-4">
                                     <input class="form-control mr-sm-2" type="submitsearch" placeholder="Itemcode" id="productCode" aria-label="Search">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" id="searchProductCode" type="button">Search</button>
-                                </form>
+                                </div>
                             </div>
-                        <div class="row">
+                        <div class="row d-flex justify-content-between">
                             <form>
                                 <div class="form-row">
+                                    <input type="hidden" id="invoice_number" value="<?php echo $_GET['invoice']; ?>">
                                     <div class="col-md-6 mb-2">
                                     <label for="validationDefault01">Customer name</label>
-                                    <input type="text" class="form-control" id="transaction_cfullName" name="transaction_cfullName">
+                                    <input type="text" value="<?php echo "Customer-".$_GET['invoice']; ?>" class="form-control" id="transaction_cfullName" name="transaction_cfullName">
                                     </div>
                                     <div class="col-md-6 mb-2">
                                     <label for="validationDefault02">Address</label>
-                                    <input type="text" class="form-control" id="transaction_caddress" name="transaction_caddress">
+                                    <input type="text" value="<?php echo "Address-".$_GET['invoice']; ?>" class="form-control" id="transaction_caddress" name="transaction_caddress">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-2">
+                                    <div class="col-md-6 mb-2">
                                         <label for="validationDefault03">Date & Time</label>
                                         <input type="text" class="form-control" id="dateAndTime" name="dateAndTime" disabled>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label for="validationDefault03">Invoice #</label>
+                                        <input type="text" disabled class="form-control" value="<?php echo $_GET['invoice']; ?>" id="invoice_number" name="invoice_number" disabled>
+                                    </div>
+                                </div>
+                            </form>
+                            <form>
+                                <div class="form-row">
+                                    <div class="col-md-12 mb-2 mt-4">
+                                        <label for="validationDefault01">Total Amount</label>
+                                        <input type="text" id="totalAmountInvoice" disabled class="form-control">
                                     </div>
                                 </div>
                             </form>
                         </div>
                         </div>
                         <div class="card-body">
-                           
+                           <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Product Code</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="main-table">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <?php include('pos/modal.php'); ?>
