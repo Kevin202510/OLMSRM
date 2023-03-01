@@ -11,7 +11,7 @@
         <form method="post" id="formData">
             <input type="hidden" name="id" id="id">
             <div class="mb-3">
-                <label class="form-label">Role Display Name</label>
+                <label class="form-label">Display Name</label>
                 <input type="text" class="form-control" id="role_display_name" name="role_display_name" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
              <input type="hidden" id="method" name="update">

@@ -31,39 +31,39 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">User Fname</label>
+                <label class="form-label">First Name</label>
                 <input type="text" class="form-control" id="user_fname" name="user_fname" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User Mname</label>
+                <label class="form-label">Middle Name</label>
                 <input type="text" class="form-control" id="user_mname" name="user_mname" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User Lname</label>
+                <label class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="user_lname" name="user_lname" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User Address</label>
+                <label class="form-label">Address</label>
                 <input type="text" class="form-control" id="user_address" name="user_address" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User Contact</label>
+                <label class="form-label">Contact</label>
                 <input type="text" class="form-control" id="user_contact" name="user_contact" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User DOB</label>
+                <label class="form-label">Date Of Birthday</label>
                 <input type="text" class="form-control" id="user_DOB" name="user_DOB" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User Email</label>
+                <label class="form-label">Email</label>
                 <input type="text" class="form-control" id="user_email" name="user_email" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User Username</label>
+                <label class="form-label">Username</label>
                 <input type="text" class="form-control" id="user_username" name="user_username" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">User Password</label>
+                <label class="form-label">Password</label>
                 <input type="text" class="form-control" id="user_password" name="user_password" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="modal-footer">

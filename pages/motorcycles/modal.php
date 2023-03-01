@@ -11,71 +11,71 @@
         <form method="post" id="rolesForm">
             <input type="hidden" name="mc_id" id="mc_id">
             <div class="mb-3">
-                <label class="form-label">Mc Mvfile</label>
+                <label class="form-label">Mvfile</label>
                 <input type="text" class="form-control" id="mc_mvfile" name="mc_mvfile" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Platenumber</label>
+                <label class="form-label">Platenumber</label>
                 <input type="text" class="form-control" id="mc_platenumber" name="mc_platenumber" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Enginenumber</label>
+                <label class="form-label">Enginenumber</label>
                 <input type="text" class="form-control" id="mc_enginenumber" name="mc_enginenumber" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Chassisnumber</label>
+                <label class="form-label">Chassisnumber</label>
                 <input type="text" class="form-control" id="mc_chassisnumber" name="mc_chassisnumber" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Desposition</label>
+                <label class="form-label">Desposition</label>
                 <input type="text" class="form-control" id="mc_desposition" name="mc_desposition" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Pistondisplacement</label>
+                <label class="form-label">Pistondisplacement</label>
                 <input type="text" class="form-control" id="mc_pistondisplacement" name="mc_pistondisplacement" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Numberofcylinders</label>
+                <label class="form-label">Numberofcylinders</label>
                 <input type="text" class="form-control" id="mc_numberofcylinders" name="mc_numberofcylinders" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Fuel</label>
+                <label class="form-label">Fuel</label>
                 <input type="text" class="form-control" id="mc_fuel" name="mc_fuel" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Make</label>
+                <label class="form-label">Make</label>
                 <input type="text" class="form-control" id="mc_make" name="mc_make" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Series</label>
+                <label class="form-label">Series</label>
                 <input type="text" class="form-control" id="mc_series" name="mc_series" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Bodytype</label>
+                <label class="form-label">Bodytype</label>
                 <input type="text" class="form-control" id="mc_bodytype" name="mc_bodytype" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Bodynumber</label>
+                <label class="form-label">Bodynumber</label>
                 <input type="text" class="form-control" id="mc_bodynumber" name="mc_bodynumber" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Yearmodel</label>
+                <label class="form-label">Yearmodel</label>
                 <input type="text" class="form-control" id="mc_yearmodel" name="mc_yearmodel" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Grosswt</label>
+                <label class="form-label">Grosswt</label>
                 <input type="text" class="form-control" id="mc_grosswt" name="mc_grosswt" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Netwt</label>
+                <label class="form-label">Netwt</label>
                 <input type="text" class="form-control" id="mc_netwt" name="mc_netwt" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Shippingwt</label>
+                <label class="form-label">Shippingwt</label>
                 <input type="text" class="form-control" id="mc_shippingwt" name="mc_shippingwt" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Mc Netcapacity</label>
+                <label class="form-label">Netcapacity</label>
                 <input type="text" class="form-control" id="mc_netcapacity" name="mc_netcapacity" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="modal-footer">
