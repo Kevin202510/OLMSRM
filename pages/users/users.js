@@ -43,6 +43,7 @@ const state = {
     );
   },
   addnew: () => {
+    console.log(md5(state.model[0].user_password));
     state.btnSave.innerHTML = "Save Changes";
     state.inputMethod.setAttribute("name", "addNew");
     state.btnSave.addEventListener("click", state.save);
