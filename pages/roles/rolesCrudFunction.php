@@ -18,29 +18,34 @@
 
             $DBCRUDAPI->insert('roles',['role_display_name'=>$role_display_name]);
 
-            echo json_encode("success");
+             if($DBCRUDAPI){
+                echo json_encode(array("success"=>true));
+            }else{
+                echo json_encode(array("success"=>false));
+            }
             
         }else if(isset($_POST['update'])){
             
-            $role_id = $_POST["role_id"];
+            $role_id = $_POST["id"];
             $role_display_name = $_POST["role_display_name"];
 
-            $DBCRUDAPI->update('roles',['role_display_name'=>$role_display_name],"role_id='$role_id'");
+            $DBCRUDAPI->update('roles',['role_display_name'=>$role_display_name],"id='$role_id'");
+             if($DBCRUDAPI){
+                echo json_encode(array("success"=>true));
+            }else{
+                echo json_encode(array("success"=>false));
+            }
         }else if(isset($_POST['delete'])){
             
-            $role_id = $_POST["role_id"];
+            $role_id = $_POST["id"];
 
-            $DBCRUDAPI->delete('roles',"role_id='$role_id'");
-
-        }else{
-            $dataid = "role_id=" . $_POST['role_id'];
-            $DBCRUDAPI->select("roles","*",$dataid);
-            $getData = $DBCRUDAPI->sql;
-            $res = array();
-            while($datass = mysqli_fetch_assoc($getData)){
-                $res = $datass;
+            $DBCRUDAPI->delete('roles',"id='$role_id'");
+             if($DBCRUDAPI){
+                echo json_encode(array("success"=>true));
+            }else{
+                echo json_encode(array("success"=>false));
             }
-            echo json_encode($res);
+
         }
     }
 

@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <?php include('authentication/head.php'); ?>
     <div class="container">
-
         <!-- Outer Row -->
         <div class="row justify-content-center">
 

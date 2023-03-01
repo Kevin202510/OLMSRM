@@ -17,6 +17,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
+            <?php if($_SESSION['userRoleId']==1 || $_SESSION['userRoleId']==2||$_SESSION['userRoleId']==3||$_SESSION['userRoleId']==5||$_SESSION['userRoleId']==6){ ?>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 Point of Sale
@@ -34,20 +35,29 @@
                     </div>
                 </div>
             </li>
+            <?php }?>
+
+            <?php if($_SESSION['userRoleId']==1 || $_SESSION['userRoleId']==2){ ?>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 Users Management
             </div>
+            <?php } ?>
+            <?php if($_SESSION['userRoleId']==1){ ?>
             <li class="nav-item">
                 <a class="nav-link" href="rolesTable.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Roles</span></a>
             </li>
+            <?php } ?>
+            <?php if($_SESSION['userRoleId']==1 || $_SESSION['userRoleId']==2){ ?>
             <li class="nav-item">
                 <a class="nav-link" href="usersTable.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Users</span></a>
             </li>
+            <?php } ?>
+            <?php if($_SESSION['userRoleId']==1 || $_SESSION['userRoleId']==2||$_SESSION['userRoleId']==3||$_SESSION['userRoleId']==5||$_SESSION['userRoleId']==6){ ?>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 Products Management
@@ -77,6 +87,7 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
             </li>
+            <?php } ?>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 Loan Management

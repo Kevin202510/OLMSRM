@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <form method="post" id="formData">
-            <input type="text" name="id" id="id">
+            <input type="hidden" name="id" id="id">
             <input type="hidden" id="method" name="update">
             <div class="mb-3">
                 <label class="form-label">Role id</label>

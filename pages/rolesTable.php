@@ -14,7 +14,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>List of Roles</h4>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                <button type="button" class="btn btn-primary" id="create-new">
                                     Add Role
                                 </button>
                             </div>
@@ -41,5 +41,5 @@
             <?php include('footer.php'); ?>
         </div>
     </div>
-<script src="roles/roles.js"></script>
+<script type="module" src="roles/roles.js"></script>
 <?php include('script.php'); ?>

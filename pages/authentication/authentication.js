@@ -1,13 +1,34 @@
 $(document).ready(function () {
   $("#loginUser").click(function () {
-    $.get(
+    let form = {
+      user_email: $("#user_email").val(),
+      user_password: $("#user_password").val(),
+      loginUser: "loginUser",
+    };
+
+    $.post(
       "authentication/authenticationFunction.php",
-      {
-        allProducts: "allProducts",
-        product_code: $("#productCode").val(),
-      },
+      form,
       function (data, status) {
-        datas = JSON.parse(data);
+        var datas = JSON.parse(data);
+        if (datas.length > 0) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `Welcome Back ${
+              datas[0].user_fname +
+              " " +
+              datas[0].user_mname +
+              " " +
+              datas[0].user_lname
+            }`,
+            showConfirmButton: false,
+            timer: 1000,
+          });
+          setTimeout(() => {
+            window.location.href = "index.php";
+          }, 1000);
+        }
       }
     );
   });

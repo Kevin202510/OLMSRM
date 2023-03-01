@@ -21,6 +21,7 @@ const state = {
   activeIndex: 0,
   btnSave: document.getElementById("btn-mul"),
   inputMethod: document.getElementById("method"),
+
   btnNew: document.getElementById("create-new"),
 
   init: () => {
@@ -34,12 +35,9 @@ const state = {
       { getData: "getData" },
       function (data, status) {
         var datas = JSON.parse(data);
-        console.log(datas);
-
         $.each(datas, function (index, value) {
           state.model.push(value);
         });
-        // console.log(state.model);
         state.model.forEach((models) => fetch.writer(state.attributes, models));
       }
     );
@@ -54,6 +52,7 @@ const state = {
   save: async (e) => {
     e.preventDefault();
     let params = $("#formData").serializeArray();
+    // console.log(params);
     let model = await fetch.save(state.entity, params);
     if (model) {
       $("#exampleModal").modal("hide");
