@@ -49,35 +49,35 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Code</label>
+                <label class="form-label">Code</label>
                 <input type="number" class="form-control" id="product_code" name="product_code" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Description</label>
+                <label class="form-label">Description</label>
                 <input type="text" class="form-control" id="product_description" name="product_description" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Size</label>
+                <label class="form-label">Size</label>
                 <input type="text" class="form-control" id="product_size" name="product_size" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Purchaseprice</label>
+                <label class="form-label">Purchaseprice</label>
                 <input type="number" class="form-control" id="product_purchaseprice" name="product_purchaseprice" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Wholesale</label>
+                <label class="form-label">Wholesale</label>
                 <input type="number" class="form-control" id="product_wholesale" name="product_wholesale" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Saleprice</label>
+                <label class="form-label">Saleprice</label>
                 <input type="number" class="form-control" id="product_saleprice" name="product_saleprice" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Stocksavail</label>
+                <label class="form-label">Stocksavail</label>
                 <input type="number" class="form-control" id="product_stocksavail" name="product_stocksavail" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Product Image</label>
+                <label class="form-label">Image</label>
                 <input type="text" class="form-control" id="product_image" name="product_image" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <input type="hidden" id="method" name="update">

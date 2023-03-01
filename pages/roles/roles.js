@@ -35,7 +35,7 @@ const state = {
       }
     );
   },
-  addnew: () => {
+  addnew: () => {56789
     state.btnSave.innerHTML = "Save Changes";
     state.inputMethod.setAttribute("name", "addNew");
     state.btnSave.addEventListener("click", state.save);

@@ -11,11 +11,11 @@
         <form method="post" id="formData">
             <input type="hidden" name="id" id="id">
             <div class="mb-3">
-                <label class="form-label">Brand Display Name</label>
+                <label class="form-label">Name</label>
                 <input type="text" class="form-control" id="brand_display_name" name="brand_display_name" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Brand Logo</label>
+                <label class="form-label">Logo</label>
                 <input type="text" class="form-control" id="brand_logo" name="brand_logo" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <input type="hidden" id="method" name="update">

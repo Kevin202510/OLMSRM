@@ -24,8 +24,8 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Brand Logo</th>
-                                    <th scope="col">Brand Name</th>
+                                    <th scope="col">Logo</th>
+                                    <th scope="col">Name</th>
                                     <th scope="col">Action</th>
                                     </tr>
                                 </thead>

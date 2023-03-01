@@ -11,19 +11,19 @@
         <form method="post" id="formData">
             <input type="hidden" name="id" id="id">
             <div class="mb-3">
-                <label class="form-label">Voucher Code</label>
+                <label class="form-label">Code</label>
                 <input type="number" class="form-control" id="voucher_code" name="voucher_code" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Voucher Description</label>
+                <label class="form-label">Description</label>
                 <input type="text" class="form-control" id="voucher_description" name="voucher_description" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Voucher Discount</label>
+                <label class="form-label">Discount</label>
                 <input type="number" class="form-control" id="voucher_discount" name="voucher_discount" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Voucher IsActive</label>
+                <label class="form-label">Active</label>
                 <select name="voucher_isActive" id="voucher_isActive"class="form-control">
                   <option>Choose Status </option>
                   <option value="0">Not Active</option>

@@ -62,15 +62,15 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">Fb id</label>
+                <label class="form-label">id</label>
                 <input type="text" class="form-control" id="fb_id" name="fb_id" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Fb Package Name</label>
+                <label class="form-label">Package Name</label>
                 <input type="text" class="form-control" id="fb_package_name" name="fb_package_name" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">Fb Description</label>
+                <label class="form-label">Description</label>
                 <input type="text" class="form-control" id="fb_description" name="fb_description" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="modal-footer">
