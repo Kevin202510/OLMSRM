@@ -1,4 +1,48 @@
 <?php include('header.php'); ?>
+<style>
+    td.description,
+      th.description {
+        width: 75px;
+        max-width: 75px;
+      }
+
+      td.quantity,
+      th.quantity {
+        width: 40px;
+        max-width: 40px;
+        word-break: break-all;
+      }
+
+      td.price,
+      th.price {
+        width: 40px;
+        max-width: 40px;
+        word-break: break-all;
+      }
+
+      .centered {
+        text-align: center;
+        align-content: center;
+      }
+
+      .ticket {
+        width: 155px;
+        max-width: 155px;
+      }
+
+      img {
+        max-width: inherit;
+        width: inherit;
+      }
+
+      @media print {
+        .hidden-print,
+        .hidden-print * {
+          display: none !important;
+        }
+      }
+</style>
+
     <div id="wrapper">
         <?php include('sidebar.php'); ?>
         <div id="content-wrapper" class="d-flex flex-column">
@@ -74,6 +118,7 @@
                                     <th scope="col">Size</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Quantity</th>
+                                    <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="main-table">
@@ -82,6 +127,7 @@
                         </div>
                     </div>
                     <?php include('pos/modal.php'); ?>
+                    <?php include('pos/printRecieptModal.php'); ?>
                 </div>
                 <!-- /.container-fluid -->
 

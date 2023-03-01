@@ -3,11 +3,11 @@
     include_once('../../API/DBCRUDAPI.php');
     $DBCRUDAPI = new DBCRUDAPI();
 
-    // $attributes = ["products.id","products.product_brand_id","brands.brand_display_name","products.product_supplier_id","suppliers.supplier_company_name","products.product_code","products.product_description","products.product_size","products.product_purchaseprice","products.product_wholesale","products.product_saleprice","products.product_stocksavail","products.product_image","products.created_at"];
+    $attributes = ["invoice_id","products.id","quantity","invoice.invoice_number","invoice.product_id","products.product_code","products.product_description","products.product_size","products.product_purchaseprice","products.product_wholesale","products.product_saleprice","products.product_stocksavail","products.product_image"];
     
     if(isset($_GET['getData'])){
         $whereClause = "invoice_number='".$_GET["invoice_number"]."'";
-        $DBCRUDAPI->selectleftjoin1("invoice","products","id","product_id",$whereClause);
+        $DBCRUDAPI->selectleftjoin1("invoice","products","id","product_id",$attributes,$whereClause);
         $data = $DBCRUDAPI->sql;
         $res = array();
         while($datass = mysqli_fetch_assoc($data)){
@@ -47,7 +47,7 @@
             
             $id = $_POST["id"];
 
-            $DBCRUDAPI->delete('products',"id='$id'");
+            $DBCRUDAPI->delete('invoice',"invoice_id='$id'");
             echo json_encode(array("success"=>true));
         }
     }

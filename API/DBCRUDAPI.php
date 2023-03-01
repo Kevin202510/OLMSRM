@@ -68,9 +68,9 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
-        public function selectleftjoin1($table,$table1,$attributename1,$attributename,$whereClause){
-            // $attributes = implode(',', $attributesName);
-            $sql = "SELECT * FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename where $whereClause";
+        public function selectleftjoin1($table,$table1,$attributename1,$attributename,$att,$whereClause){
+            $atts = implode(',', $att);
+            $sql = "SELECT $atts FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename where $whereClause";
 
             $this->sql = $result = $this->mysqli->query($sql);
         }

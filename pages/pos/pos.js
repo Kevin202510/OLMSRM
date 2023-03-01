@@ -38,6 +38,38 @@ $(document).ready(function () {
     addCart($(e.currentTarget).data("id"))
   );
 
+  $("body").on("click", "#delete", async (e) => {
+    const { value: result } = await swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+      footer: "<a href>CleverTech</a>",
+    });
+
+    if (result) {
+      $.post(
+        "pos/invoiceCrudFunction.php",
+        {
+          id: $(e.currentTarget).data("id"),
+          delete: "delete",
+        },
+        function (data, status) {
+          if (status) {
+            $("#productCode").val("");
+            amount = 0;
+            $("#main-table").empty();
+            model.length = 0;
+            tableWriter();
+          }
+        }
+      );
+    }
+  });
+
   function addCart(val) {
     $("#productCode").val(val);
     var keycode = "13";
@@ -102,7 +134,7 @@ $(document).ready(function () {
                 $("#toAdd").val(0);
                 break;
               } else {
-                console.log(model.length);
+                // console.log(model.length);
                 if (model.length - 1 == index) {
                   $("#toAdd").val(1);
                   $("#toAdd").click();
@@ -229,7 +261,7 @@ $(document).ready(function () {
                   $("#toAdd").val(0);
                   break;
                 } else {
-                  console.log(model.length);
+                  // console.log(model.length);
                   if (model.length - 1 == index) {
                     $("#toAdd").val(1);
                     $("#toAdd").click();
@@ -280,6 +312,17 @@ $(document).ready(function () {
       }
       $("<td>", { class: "text-wrap", html: attriMap.get(attri) }).appendTo(tr);
     });
+    let td = $("<td>");
+    let group = $("<div>", { class: "btn-group" });
+    $("<button>", {
+      "data-id": modelss.invoice_id,
+      class: "btn btn-danger",
+      id: "delete",
+      html: "x",
+    }).appendTo(group);
+
+    group.appendTo(td);
+    td.appendTo(tr);
     $("#main-table").append(tr);
   }
 
@@ -299,11 +342,14 @@ $(document).ready(function () {
         showConfirmButton: false,
         timer: 1500,
       });
-      setTimeout(() => {
-        window.location.href = `pointofsale.php?invoice=${$(
-          "#newInvoiceCode"
-        ).val()}`;
-      }, 1000);
+
+      $("#exampleModal").modal("show");
+      $("#ticket").printElement();
+      // setTimeout(() => {
+      //   window.location.href = `pointofsale.php?invoice=${$(
+      //     "#newInvoiceCode"
+      //   ).val()}`;
+      // }, 1000);
     } else {
       Swal.fire({
         position: "center",
