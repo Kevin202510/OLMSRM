@@ -24,7 +24,7 @@
             $user_DOB = $_POST["user_DOB"];
             $user_email = $_POST["user_email"];
             $user_username = $_POST["user_username"];
-            $user_password = $_POST["user_password"];
+            $user_password = md5($_POST["user_password"]);
 
             $DBCRUDAPI->insert('users',['user_role_id'=>$user_role_id,'user_fname'=>$user_fname,'user_mname'=>$user_mname,'user_lname'=>$user_lname,'user_address'=>$user_address,'user_contact'=>$user_contact,'user_DOB'=>$user_DOB,'user_email'=>$user_email,'user_username'=>$user_username,'user_password'=>$user_password,]);
 
@@ -46,7 +46,7 @@
             $user_DOB = $_POST["user_DOB"];
             $user_email = $_POST["user_email"];
             $user_username = $_POST["user_username"];
-            $user_password = $_POST["user_password"];
+            $user_password = md5($_POST["user_password"]);
 
             $DBCRUDAPI->update('users',['user_role_id'=>$user_role_id,'user_fname'=>$user_fname,'user_mname'=>$user_mname,'user_lname'=>$user_lname,'user_address'=>$user_address,'user_contact'=>$user_contact,'user_DOB'=>$user_DOB,'user_email'=>$user_email,'user_username'=>$user_username,'user_password'=>$user_password,],"id='$id'");
              if($DBCRUDAPI){

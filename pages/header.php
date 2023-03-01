@@ -24,6 +24,7 @@
         <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/md5.js"></script>
 </head>
 
 <body id="page-top">

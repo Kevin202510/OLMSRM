@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2023 at 03:47 PM
+-- Generation Time: Mar 01, 2023 at 04:09 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,6 +53,7 @@ INSERT INTO `brands` (`id`, `brand_logo`, `brand_display_name`, `created_at`, `u
 (40, 'FullySynthetic', 'FullySynthetic', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
+
 --
 -- Table structure for table `invoice`
 --
@@ -68,6 +69,23 @@ CREATE TABLE `invoice` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`id`, `invoice_number`, `product_id`, `quantity`, `totalAmount`, `pay_amount`, `change`, `created_at`, `updated_at`) VALUES
+(1, 'RS-3420', 12, 1, 38, 0, 0, NULL, NULL),
+(2, 'RS-3420', 13, 3, 800, 0, 0, NULL, NULL),
+(3, 'RS-3420', 18, 6, 3040, 0, 0, NULL, NULL),
+(4, 'RS-0002', 12, 1, 38, 0, 0, NULL, NULL),
+(5, 'RS-39306', 12, 1, 38, 0, 0, NULL, NULL),
+(6, 'RS-3732', 12, 1, 38, 0, 0, NULL, NULL),
+(7, 'RS-0390', 12, 1, 38, 0, 0, NULL, NULL),
+(8, 'RS-692320', 12, 1, 38, 0, 0, NULL, NULL),
+(9, 'RS-33298', 12, 1, 38, 0, 0, NULL, NULL),
+(10, 'RS-33298', 12, 1, 38, 0, 0, NULL, NULL),
+(11, 'RS-702246', 12, 3, 152, 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -124,7 +142,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_brand_id`, `product_supplier_id`, `product_code`, `product_description`, `product_size`, `product_purchaseprice`, `product_wholesale`, `product_saleprice`, `product_stocksavail`, `product_image`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(12, 34, 1, '12345', '2Tpowerburn', '200ml', 38.5, 35, 38, 62, '2T-petron', NULL, NULL, NULL),
+(12, 34, 1, '202510', '2Tpowerburn', '200ml', 38.5, 35, 38, 62, '2T-petron', NULL, NULL, NULL),
 (13, 35, 3, '674', 'Havoline', '1litters', 200, 195, 200, 42, 'Caltex', NULL, NULL, NULL),
 (14, 36, 4, '144', 'ZIC', '1L', 200, 190, 200, 42, 'SK ZIC', NULL, NULL, NULL),
 (15, 37, 5, '1234', 'HT TECH', '4T', 250, 245, 250, 62, 'HT TECH', NULL, NULL, NULL),
@@ -168,8 +186,7 @@ INSERT INTO `roles` (`id`, `role_display_name`, `created_at`, `updated_at`, `del
 (2, 'Branch Manager', NULL, NULL, NULL),
 (3, 'Sales Agent', NULL, NULL, NULL),
 (4, 'Mekaniko', NULL, NULL, NULL),
-(5, 'Receptionist', NULL, NULL, NULL),
-(6, 'Cashier', NULL, NULL, NULL);
+(5, 'Receptionist', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -252,8 +269,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_role_id`, `user_fname`, `user_mname`, `user_lname`, `user_address`, `user_contact`, `user_DOB`, `user_email`, `user_username`, `user_password`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'superadmin@gmail.com', 'superadmin', 'password', NULL, NULL, NULL),
-(2, 2, 'myna', '', 'bulawit', 'Conception General Tinio NE.', '09268123667', 'Feb-14-2002', 'branchmanager@gmail.com', 'branchmanager', 'password', NULL, NULL, NULL);
+(1, 2, 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'superadmin@gmail.com', 'superadmin', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
+(2, 4, 'myna', '', 'bulawit', 'Conception General Tinio NE.', '09268123667', 'Feb-14-2002', 'branchmanager@gmail.com', 'branchmanager', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
+(3, 1, 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdasd', 'asdasd', 'kfc1010@gmail.com', 'kfc', 'password', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -359,19 +377,19 @@ ALTER TABLE `vouchers`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -389,7 +407,7 @@ ALTER TABLE `productsales`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
@@ -407,7 +425,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `vouchers`
@@ -424,7 +442,6 @@ ALTER TABLE `vouchers`
 --
 ALTER TABLE `invoice`
   ADD CONSTRAINT `invoice_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
-
 
 --
 -- Constraints for table `products`
