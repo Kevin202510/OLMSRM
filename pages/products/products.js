@@ -10,16 +10,15 @@ $("body").on("click", "#delete", (e) =>
 const state = {
   entity: "products",
   attributes: [
+    "product_code",
+    "product_image",
     "brand_display_name",
     "supplier_company_name",
-    "product_code",
     "product_description",
     "product_size",
-    "product_purchaseprice",
     "product_wholesale",
     "product_saleprice",
     "product_stocksavail",
-    "product_image",
   ],
   model: [],
   activeIndex: 0,

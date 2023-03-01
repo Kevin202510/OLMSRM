@@ -53,6 +53,23 @@ INSERT INTO `brands` (`id`, `brand_logo`, `brand_display_name`, `created_at`, `u
 (40, 'FullySynthetic', 'FullySynthetic', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `invoice_number` varchar(255) NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `totalAmount` double NOT NULL,
+  `pay_amount` double NOT NULL,
+  `change` double NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `migrations`
@@ -76,7 +93,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2023_02_27_060813_create_products_table', 1),
 (6, '2023_02_27_063547_create_vouchers_table', 1),
 (7, '2023_02_28_061217_create_transactions_table', 1),
-(8, '2023_02_29_061132_create_productsales_table', 1);
+(8, '2023_02_28_144112_create_invoice_table', 1),
+(9, '2023_02_29_061132_create_productsales_table', 1);
 
 -- --------------------------------------------------------
 
@@ -273,6 +291,13 @@ ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `invoice_product_id_foreign` (`product_id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -337,6 +362,12 @@ ALTER TABLE `brands`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -387,6 +418,13 @@ ALTER TABLE `vouchers`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD CONSTRAINT `invoice_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
+
 
 --
 -- Constraints for table `products`

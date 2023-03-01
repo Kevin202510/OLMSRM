@@ -14,13 +14,15 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>Point Of Sale</h4>
-                                <div class="col-md-4">
-                                    <input class="form-control mr-sm-2" type="submitsearch" placeholder="Itemcode" id="productCode" aria-label="Search">
-                                </div>
+                                    <div class="dropdown">
+                                        <input class="form-control" placeholder="Itemcode" id="productCode" data-toggle="dropdown" aria-expanded="true">
+                                        <div class="dropdown-menu" id="productsList"></div>
+                                    </div>
                             </div>
                         <div class="row d-flex justify-content-between">
                             <form>
                                 <div class="form-row">
+                                    <input type="hidden" id="newInvoiceCode" value="<?php echo $finalcode; ?>">
                                     <input type="hidden" id="invoice_number" value="<?php echo $_GET['invoice']; ?>">
                                     <div class="col-md-6 mb-2">
                                     <label for="validationDefault01">Customer name</label>
@@ -48,6 +50,14 @@
                                     <div class="col-md-12 mb-2 mt-4">
                                         <label for="validationDefault01">Total Amount</label>
                                         <input type="text" id="totalAmountInvoice" disabled class="form-control">
+                                    </div>
+                                </div><div class="form-row">
+                                    <div class="col-md-12 mb-2 mt-4">
+                                        <center>
+                                            <button type="button" class="btn btn-primary" id="paymentna" disabled>
+                                                Payment
+                                            </button>
+                                        </center>
                                     </div>
                                 </div>
                             </form>

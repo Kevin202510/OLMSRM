@@ -19,26 +19,27 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Brand id</th>
-                                    <th scope="col">Supplier id</th>
-                                    <th scope="col">Code</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Size</th>
-                                    <th scope="col">Purchaseprice</th>
-                                    <th scope="col">Wholesale</th>
-                                    <th scope="col">Saleprice</th>
-                                    <th scope="col">Stocksavail</th>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="main-table">
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Code</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Brand</th>
+                                        <th scope="col">Supplier</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Size</th>
+                                        <th scope="col">Wholesale</th>
+                                        <th scope="col">Saleprice</th>
+                                        <th scope="col">Stocksavail</th>
+                                        <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="main-table">
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <?php include('products/modal.php'); ?>
