@@ -12,19 +12,19 @@
             <input type="hidden" name="id" id="id">
             <input type="hidden" id="method" name="update">
             <div class="mb-3">
-                <label class="form-label">supplier_name</label>
+                <label class="form-label">Supplier Name</label>
                 <input type="text" class="form-control" id="supplier_name" name="supplier_name" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">supplier_company_name</label>
+                <label class="form-label">Supplier Company Name</label>
                 <input type="text" class="form-control" id="supplier_company_name" name="supplier_company_name" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">supplier_contact</label>
+                <label class="form-label">Supplier Contact</label>
                 <input type="number" class="form-control" id="supplier_contact" name="supplier_contact" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">supplier_address</label>
+                <label class="form-label">Supplier Address</label>
                 <input type="text" class="form-control" id="supplier_address" name="supplier_address" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="modal-footer">

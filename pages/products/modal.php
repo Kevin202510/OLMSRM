@@ -11,7 +11,7 @@
         <form method="post" id="formData">
             <input type="hidden" name="id" id="id">
             <div class="mb-3">
-                <label class="form-label">product_brand_id</label>
+                <label class="form-label">Product Brand id</label>
                 <select class="form-control" name="product_brand_id" id="product_brand_id">
                     <option>Choose Brand</option>
                     <?php
@@ -30,7 +30,7 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">product_supplier_id</label>
+                <label class="form-label">Product Supplier id</label>
                 <select class="form-control" name="product_supplier_id" id="product_supplier_id">
                     <option>Choose Supplier</option>
                     <?php
@@ -49,35 +49,35 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">product_code</label>
+                <label class="form-label">Product Code</label>
                 <input type="number" class="form-control" id="product_code" name="product_code" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">product_description</label>
+                <label class="form-label">Product Description</label>
                 <input type="text" class="form-control" id="product_description" name="product_description" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">product_size</label>
+                <label class="form-label">Product Size</label>
                 <input type="text" class="form-control" id="product_size" name="product_size" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">product_purchaseprice</label>
+                <label class="form-label">Product Purchaseprice</label>
                 <input type="number" class="form-control" id="product_purchaseprice" name="product_purchaseprice" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">product_wholesale</label>
+                <label class="form-label">Product Wholesale</label>
                 <input type="number" class="form-control" id="product_wholesale" name="product_wholesale" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">product_saleprice</label>
+                <label class="form-label">Product Saleprice</label>
                 <input type="number" class="form-control" id="product_saleprice" name="product_saleprice" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">product_stocksavail</label>
+                <label class="form-label">Product Stocksavail</label>
                 <input type="number" class="form-control" id="product_stocksavail" name="product_stocksavail" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">product_image</label>
+                <label class="form-label">Product Image</label>
                 <input type="text" class="form-control" id="product_image" name="product_image" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <input type="hidden" id="method" name="update">

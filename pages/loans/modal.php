@@ -11,7 +11,7 @@
         <form method="post" id="rolesForm">
             <input type="hidden" name="user_id" id="user_id">
             <div class="mb-3">
-                <label class="form-label">role_id</label>
+                <label class="form-label">Role id</label>
                 <select class="form-control" name="brands_id" id="brands_id">
                     <option selected>Choose Role</option>
                     <?php
@@ -62,15 +62,15 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">fb_id</label>
+                <label class="form-label">Fb id</label>
                 <input type="text" class="form-control" id="fb_id" name="fb_id" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">fb_package_name</label>
+                <label class="form-label">Fb Package Name</label>
                 <input type="text" class="form-control" id="fb_package_name" name="fb_package_name" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="mb-3">
-                <label class="form-label">fb_description</label>
+                <label class="form-label">Fb Description</label>
                 <input type="text" class="form-control" id="fb_description" name="fb_description" aria-describedby="emailHelp" placeholder="Display Name" >
             </div>
             <div class="modal-footer">
