@@ -7,7 +7,7 @@
     
     if(isset($_GET['getData'])){
         $whereClause = "invoice_number='".$_GET["invoice_number"]."'";
-        $DBCRUDAPI->selectleftjoin("invoice","products","id","product_id",$whereClause);
+        $DBCRUDAPI->selectleftjoin1("invoice","products","id","product_id",$whereClause);
         $data = $DBCRUDAPI->sql;
         $res = array();
         while($datass = mysqli_fetch_assoc($data)){

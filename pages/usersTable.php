@@ -14,9 +14,14 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>List of Users</h4>
-                                <button type="button" class="btn btn-primary" id="create-new">
-                                    Add User
-                                </button>
+                                <div class="row">
+                                    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mr-2">
+                                        Generate Report
+                                    </button>
+                                    <button type="button" class="btn btn-success" id="create-new">
+                                        Add User
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">

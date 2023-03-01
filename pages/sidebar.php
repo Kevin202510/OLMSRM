@@ -36,7 +36,7 @@
             </li>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
-                Management
+                Users Management
             </div>
             <li class="nav-item">
                 <a class="nav-link" href="rolesTable.php">
@@ -48,17 +48,39 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Users</span></a>
             </li>
-            
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Products Management
+            </div>
             <li class="nav-item">
                 <a class="nav-link" href="brandsTable.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Brands</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="suppliersTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Suppliers</span></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="freebiesTable.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Freebies</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="vouchersTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Vouchers</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="productsTable.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Products</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Loan Management
+            </div>
             <li class="nav-item">
                 <a class="nav-link" href="loansTable.php">
                     <i class="fas fa-fw fa-table"></i>
@@ -68,21 +90,6 @@
                 <a class="nav-link" href="motorcyclesTable.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Motorcycles</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="productsTable.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Products</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="vouchersTable.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Vouchers</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="suppliersTable.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Suppliers</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
