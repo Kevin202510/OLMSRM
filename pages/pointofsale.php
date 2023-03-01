@@ -43,6 +43,7 @@
                                 </div>
                             </form>
                             <form>
+                                <input type="hidden" id="toAdd">
                                 <div class="form-row">
                                     <div class="col-md-12 mb-2 mt-4">
                                         <label for="validationDefault01">Total Amount</label>

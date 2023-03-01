@@ -55,7 +55,7 @@ $(document).ready(function () {
             $("#productCode").val("");
           } else {
             if (model.length == 0) {
-              alert("nag add");
+              // alert("nag add");
               $.post(
                 "pos/invoiceCrudFunction.php",
                 {
@@ -68,6 +68,7 @@ $(document).ready(function () {
                 },
                 function (data, status) {
                   if (status) {
+                    $("#productCode").val("");
                     amount = 0;
                     $("#main-table").empty();
                     model.length = 0;
@@ -76,73 +77,74 @@ $(document).ready(function () {
                 }
               );
             } else {
-              var isaisa = new Promise((resolve, reject) => {
-                model.forEach((models) => {
-                  if (
-                    models.product_code == $("#productCode").val() &&
-                    models.invoice_number == $("#invoice_number").val()
-                  ) {
-                    alert("nag update");
-                    $.post(
-                      "pos/invoiceCrudFunction.php",
-                      {
-                        product_id: models.product_id,
-                        invoice_number: models.invoice_number,
-                        quantity: parseInt(models.quantity) + 1,
-                        totalAmount:
-                          parseInt(models.totalAmount) +
-                          parseInt(models.quantity) *
-                            parseInt(models.product_saleprice),
-                        update: "update",
-                      },
-                      function (data, status) {
-                        if (status) {
-                          amount = 0;
-                          $("#main-table").empty();
-                          model.length = 0;
-                          tableWriter();
-                        }
+              for (let index = 0; index < model.length; index++) {
+                if (
+                  model[index].product_code == $("#productCode").val() &&
+                  model[index].invoice_number == $("#invoice_number").val()
+                ) {
+                  $.post(
+                    "pos/invoiceCrudFunction.php",
+                    {
+                      product_id: model[index].product_id,
+                      invoice_number: model[index].invoice_number,
+                      quantity: parseInt(model[index].quantity) + 1,
+                      totalAmount:
+                        parseInt(model[index].totalAmount) +
+                        parseInt(model[index].quantity) *
+                          parseInt(model[index].product_saleprice),
+                      update: "update",
+                    },
+                    function (data, status) {
+                      if (status) {
+                        $("#productCode").val("");
+                        amount = 0;
+                        $("#main-table").empty();
+                        model.length = 0;
+                        tableWriter();
                       }
-                    );
-                  } else {
-                    return resolve();
+                    }
+                  );
+                  $("#toAdd").val(0);
+                  break;
+                } else {
+                  console.log(model.length);
+                  if (model.length - 1 == index) {
+                    $("#toAdd").val(1);
+                    $("#toAdd").click();
                   }
-                });
-              });
-              console.log(isaisa);
-              // isaisa.then((fulfilled) => {
-              //   if (fulfilled) {
-              //     alert("tangina");
-              //   }
-              // isResolved = true;
-              // if (isResolved) {
-              //   $.post(
-              //     "pos/invoiceCrudFunction.php",
-              //     {
-              //       product_id: datas[0].id,
-              //       invoice_number: $("#invoice_number").val(),
-              //       quantity: 1,
-              //       totalAmount:
-              //         parseInt(datas[0].product_saleprice) * parseInt(1),
-              //       addNew: "addNew",
-              //     },
-              //     function (data, status) {
-              //       if (status) {
-              //         amount = 0;
-              //         $("#main-table").empty();
-              //         model.length = 0;
-              //         tableWriter();
-              //       }
-              //     }
-              //   );
-              // }
-              // });
+                }
+              }
             }
           }
         }
       );
     }
   });
+
+  $("#toAdd").click(function () {
+    if (parseInt($("#toAdd").val()) > 0) {
+      $.post(
+        "pos/invoiceCrudFunction.php",
+        {
+          product_id: datas[0].id,
+          invoice_number: $("#invoice_number").val(),
+          quantity: 1,
+          totalAmount: parseInt(datas[0].product_saleprice) * parseInt(1),
+          addNew: "addNew",
+        },
+        function (data, status) {
+          if (status) {
+            $("#productCode").val("");
+            amount = 0;
+            $("#main-table").empty();
+            model.length = 0;
+            tableWriter();
+          }
+        }
+      );
+    }
+  });
+
   function writer(modelss, i) {
     let tr = $("<tr>", {
       id: modelss.id,
