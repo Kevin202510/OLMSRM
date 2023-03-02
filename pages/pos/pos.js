@@ -334,7 +334,8 @@ $(document).ready(function () {
       inputPlaceholder: "Amount",
     });
 
-    if (amountPay > parseInt($("#totalAmountInvoice").val())) {
+    if (amountPay >= parseInt($("#totalAmountInvoice").val())) {
+      let change = amountPay - parseInt($("#totalAmountInvoice").val());
       Swal.fire({
         position: "center",
         icon: "success",
@@ -342,14 +343,28 @@ $(document).ready(function () {
         showConfirmButton: false,
         timer: 1500,
       });
-
-      $("#exampleModal").modal("show");
-      $("#ticket").printElement();
-      // setTimeout(() => {
-      //   window.location.href = `pointofsale.php?invoice=${$(
-      //     "#newInvoiceCode"
-      //   ).val()}`;
-      // }, 1000);
+      $.post(
+        "pos/transactionsCrudFunctions.php",
+        {
+          transaction_totalAmount: $("#totalAmountInvoice").val(),
+          transaction_cfullName: $("#transaction_cfullName").val(),
+          transaction_caddress: $("#transaction_caddress").val(),
+          transaction_invoice_number: $("#invoice_number").val(),
+          transaction_voucher_id: $("#transaction_voucher_id").val(),
+          transaction_payment: amountPay,
+          transaction_change: change,
+          addNew: "addNew",
+        },
+        function (data, status) {
+          if (status) {
+            setTimeout(() => {
+              window.location.href = `pointofsale.php?invoice=${$(
+                "#newInvoiceCode"
+              ).val()}`;
+            }, 1000);
+          }
+        }
+      );
     } else {
       Swal.fire({
         position: "center",

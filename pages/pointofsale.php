@@ -68,13 +68,17 @@
                                 <div class="form-row">
                                     <input type="hidden" id="newInvoiceCode" value="<?php echo $finalcode; ?>">
                                     <input type="hidden" id="invoice_number" value="<?php echo $_GET['invoice']; ?>">
-                                    <div class="col-md-6 mb-2">
+                                    <div class="col-md-4 mb-2">
                                     <label for="validationDefault01">Customer name</label>
                                     <input type="text" value="<?php echo "Customer-".$_GET['invoice']; ?>" class="form-control" id="transaction_cfullName" name="transaction_cfullName">
                                     </div>
-                                    <div class="col-md-6 mb-2">
+                                    <div class="col-md-4 mb-2">
                                     <label for="validationDefault02">Address</label>
                                     <input type="text" value="<?php echo "Address-".$_GET['invoice']; ?>" class="form-control" id="transaction_caddress" name="transaction_caddress">
+                                    </div>
+                                    <div class="col-md-4 mb-2">
+                                    <label for="validationDefault02">Voucher || Coupon</label>
+                                    <input type="text" class="form-control" value="0" id="transaction_voucher_id" name="transaction_voucher_id">
                                     </div>
                                 </div>
                                 <div class="form-row">

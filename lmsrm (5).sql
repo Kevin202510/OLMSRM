@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2023 at 04:09 PM
+-- Generation Time: Mar 02, 2023 at 01:45 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -59,13 +59,11 @@ INSERT INTO `brands` (`id`, `brand_logo`, `brand_display_name`, `created_at`, `u
 --
 
 CREATE TABLE `invoice` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `invoice_id` bigint(20) UNSIGNED NOT NULL,
   `invoice_number` varchar(255) NOT NULL,
   `product_id` bigint(20) UNSIGNED NOT NULL,
   `quantity` int(11) NOT NULL,
   `totalAmount` double NOT NULL,
-  `pay_amount` double NOT NULL,
-  `change` double NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -74,18 +72,14 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`id`, `invoice_number`, `product_id`, `quantity`, `totalAmount`, `pay_amount`, `change`, `created_at`, `updated_at`) VALUES
-(1, 'RS-3420', 12, 1, 38, 0, 0, NULL, NULL),
-(2, 'RS-3420', 13, 3, 800, 0, 0, NULL, NULL),
-(3, 'RS-3420', 18, 6, 3040, 0, 0, NULL, NULL),
-(4, 'RS-0002', 12, 1, 38, 0, 0, NULL, NULL),
-(5, 'RS-39306', 12, 1, 38, 0, 0, NULL, NULL),
-(6, 'RS-3732', 12, 1, 38, 0, 0, NULL, NULL),
-(7, 'RS-0390', 12, 1, 38, 0, 0, NULL, NULL),
-(8, 'RS-692320', 12, 1, 38, 0, 0, NULL, NULL),
-(9, 'RS-33298', 12, 1, 38, 0, 0, NULL, NULL),
-(10, 'RS-33298', 12, 1, 38, 0, 0, NULL, NULL),
-(11, 'RS-702246', 12, 3, 152, 0, 0, NULL, NULL);
+INSERT INTO `invoice` (`invoice_id`, `invoice_number`, `product_id`, `quantity`, `totalAmount`, `created_at`, `updated_at`) VALUES
+(28, 'RS-20522', 13, 1, 200, NULL, NULL),
+(29, 'RS-20522', 15, 1, 250, NULL, NULL),
+(30, 'RS-22230', 13, 2, 0, NULL, NULL),
+(31, 'RS-22230', 16, 1, 350, NULL, NULL),
+(32, 'RS-22230', 15, 1, 250, NULL, NULL),
+(33, 'RS-22230', 17, 1, 200, NULL, NULL),
+(34, 'RS-2330', 12, 1, 38, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -227,19 +221,26 @@ INSERT INTO `suppliers` (`id`, `supplier_name`, `supplier_company_name`, `suppli
 
 CREATE TABLE `transactions` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `transaction_voucher_id` bigint(20) UNSIGNED NOT NULL,
-  `transaction_product_id` bigint(20) UNSIGNED NOT NULL,
+  `transaction_voucher_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `transaction_invoice_number` varchar(20) NOT NULL,
   `transaction_cfullName` varchar(255) NOT NULL,
   `transaction_caddress` varchar(255) NOT NULL,
-  `transaction_ccontact` varchar(255) NOT NULL,
-  `transaction_product_quantity` int(11) NOT NULL,
-  `transaction_totalamount` varchar(255) NOT NULL,
+  `transaction_totalAmount` double NOT NULL,
   `transaction_payment` varchar(255) NOT NULL,
   `transaction_change` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `transaction_voucher_id`, `transaction_invoice_number`, `transaction_cfullName`, `transaction_caddress`, `transaction_totalAmount`, `transaction_payment`, `transaction_change`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(23, 0, 'RS-20522', 'Kevin Felix Caluag', 'Bago General Tinio NE', 450, '500', '50', NULL, NULL, NULL),
+(24, 0, 'RS-22230', 'Myna Bulawit', 'Concepcion', 1200, '1200', '0', NULL, NULL, NULL),
+(25, 0, 'RS-2330', 'Customer-RS-2330', 'Address-RS-2330', 38, '50', '12', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -271,7 +272,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `user_role_id`, `user_fname`, `user_mname`, `user_lname`, `user_address`, `user_contact`, `user_DOB`, `user_email`, `user_username`, `user_password`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 2, 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'superadmin@gmail.com', 'superadmin', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
 (2, 4, 'myna', '', 'bulawit', 'Conception General Tinio NE.', '09268123667', 'Feb-14-2002', 'branchmanager@gmail.com', 'branchmanager', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
-(3, 1, 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdasd', 'asdasd', 'kfc1010@gmail.com', 'kfc', 'password', NULL, NULL, NULL);
+(3, 1, 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdasd', 'asdasd', 'kfc1010@gmail.com', 'kfc', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -294,7 +295,7 @@ CREATE TABLE `vouchers` (
 --
 
 INSERT INTO `vouchers` (`id`, `voucher_code`, `voucher_description`, `voucher_discount`, `voucher_isActive`, `created_at`, `updated_at`) VALUES
-(2, '3242', 'fdf', '34234', 0, NULL, NULL),
+(0, 'NULL', 'NULL', 'NULL', 0, NULL, NULL),
 (3, '3', 'fdfe', '34234', 0, NULL, NULL),
 (4, 'weqwe', 'qweqwe', '12', 1, NULL, NULL);
 
@@ -312,7 +313,7 @@ ALTER TABLE `brands`
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`invoice_id`),
   ADD KEY `invoice_product_id_foreign` (`product_id`);
 
 --
@@ -351,8 +352,7 @@ ALTER TABLE `suppliers`
 --
 ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `transactions_transaction_voucher_id_foreign` (`transaction_voucher_id`),
-  ADD KEY `transactions_transaction_product_id_foreign` (`transaction_product_id`);
+  ADD KEY `transactions_transaction_voucher_id_foreign` (`transaction_voucher_id`);
 
 --
 -- Indexes for table `users`
@@ -383,7 +383,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `invoice_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -419,7 +419,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -453,8 +453,7 @@ ALTER TABLE `products`
 -- Constraints for table `transactions`
 --
 ALTER TABLE `transactions`
-  ADD CONSTRAINT `transactions_transaction_product_id_foreign` FOREIGN KEY (`transaction_product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `transactions_transaction_voucher_id_foreign` FOREIGN KEY (`transaction_voucher_id`) REFERENCES `vouchers` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `transaction_voucher_id` FOREIGN KEY (`transaction_voucher_id`) REFERENCES `vouchers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`

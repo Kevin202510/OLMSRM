@@ -11,10 +11,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <?php 
-        $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"#")+1);  
-    ?>
-    <title><?php echo basename($curPageName); ?></title>
+
+    <title>RUSI</title>
 
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

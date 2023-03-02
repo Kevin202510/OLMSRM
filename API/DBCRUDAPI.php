@@ -15,6 +15,7 @@
         public function insert($table,$para=array()){
             $table_columns = implode(',', array_keys($para));
             $table_value = implode("','", $para);
+            echo $table_value;
 
             $sql="INSERT INTO $table($table_columns) VALUES('$table_value')";
 

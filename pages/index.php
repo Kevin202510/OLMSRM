@@ -26,8 +26,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                                Total Sale (<?php echo date('F, Y'); ?>)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="monthlySales"></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -109,4 +109,5 @@
             <?php include('footer.php'); ?>
         </div>
     </div>
+<script src="home/home.js"></script>
 <?php include('script.php'); ?>
