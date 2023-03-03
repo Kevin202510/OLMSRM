@@ -25,7 +25,7 @@ $(document).ready(function () {
     var myLineChart = new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["March"],
+        labels: ["Jan", "Feb", "March"],
         datasets: [
           {
             label: "Sales",
@@ -40,7 +40,7 @@ $(document).ready(function () {
             pointHoverBorderColor: "rgba(78, 115, 223, 1)",
             pointHitRadius: 10,
             pointBorderWidth: 2,
-            data: lamannadata,
+            data: [1000, 5000, 3500],
           },
         ],
       },
