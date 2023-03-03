@@ -1,11 +1,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <img src="../assets/img/rusilogo.png" class="avatar-img img-fluid" style="width:50px;">
                 </div>
-                <div class="sidebar-brand-text mx-3">Rusi Motorcycles<sup></sup></div>
+                <div class="sidebar-brand-text mx-3">RMSIMS<sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -31,6 +31,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="pointofsale.php?invoice=<?php echo $finalcode ?>">Cashier</a>
+                        <a class="collapse-item" href="salesTable.php">Purchase Motorcycle</a>
                         <a class="collapse-item" href="salesTable.php">Sales</a>
                     </div>
                 </div>
@@ -46,14 +47,14 @@
             <?php if($_SESSION['userRoleId']==1){ ?>
             <li class="nav-item">
                 <a class="nav-link" href="rolesTable.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-lock"></i>
                     <span>Roles</span></a>
             </li>
             <?php } ?>
             <?php if($_SESSION['userRoleId']==1 || $_SESSION['userRoleId']==2){ ?>
             <li class="nav-item">
                 <a class="nav-link" href="usersTable.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span>Users</span></a>
             </li>
             <?php } ?>
@@ -69,7 +70,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="suppliersTable.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span>Suppliers</span></a>
             </li>
             <li class="nav-item">
@@ -84,7 +85,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="productsTable.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fab fa-product-hunt"></i>
                     <span>Products</span></a>
             </li>
             <?php } ?>
