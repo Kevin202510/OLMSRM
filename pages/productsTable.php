@@ -44,7 +44,6 @@
                                     <tbody id="main-table">
                                     </tbody>
                                 </table>
-                                </div>
                             </div>
                         </div>
                     </div>
