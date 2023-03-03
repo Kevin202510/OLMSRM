@@ -73,7 +73,8 @@
                         </div>
                         </div>
                         <div class="card-body">
-                           <table class="table table-striped">
+                            <div class="table-responsive">
+                                <table class="table table-sm">
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
@@ -89,6 +90,8 @@
                                 <tbody id="main-table">
                                 </tbody>
                             </table>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <?php include('pos/modal.php'); ?>
