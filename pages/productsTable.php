@@ -1,4 +1,9 @@
 <?php include('header.php'); ?>
+<?php 
+    if(!$_SESSION['userFullname']){
+        header('Location: login.php');
+    }
+?>
     <div id="wrapper">
         <?php include('sidebar.php'); ?>
         <div id="content-wrapper" class="d-flex flex-column">
