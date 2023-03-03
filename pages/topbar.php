@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-    <span>RUSI Motorcycle Sales and Inventory Monitoring System with QR Code Technology</span>
+    <span style="font-size:13px;">RUSI MOTORCYCLES SALES AND INVENTORY MONITORING SYSTEM WITH QR CODE TECHNOLOGY</span>
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
