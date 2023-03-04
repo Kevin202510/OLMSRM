@@ -16,6 +16,7 @@
         while($datass = mysqli_fetch_assoc($data)){
             $_SESSION['userFullname'] = strtoupper($datass['user_fname']." ".$datass['user_mname']." ".$datass['user_lname']);
             $_SESSION['userRoleId'] = $datass['user_role_id'];
+            $_SESSION['userProfile'] = $datass['user_profile'];
             $res[] = $datass;
         }
         echo json_encode($res);
