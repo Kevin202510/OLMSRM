@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2023 at 01:45 PM
+-- Generation Time: Mar 04, 2023 at 09:41 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -41,16 +41,17 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `brand_logo`, `brand_display_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'honda.jpg', 'Honda', NULL, NULL, NULL),
-(2, 'honda.jpg', 'Kawasaki', NULL, NULL, NULL),
-(3, 'honda.jpg', 'Yamahas', NULL, NULL, NULL),
-(34, 'petron', 'Petron', NULL, NULL, NULL),
-(35, 'Caltex', 'Caltex', NULL, NULL, NULL),
-(36, 'Sk Zic', 'Sk Zic', NULL, NULL, NULL),
-(37, 'HC TECH', 'HC TECH', NULL, NULL, NULL),
-(38, 'CleanSing', 'CleanSing', NULL, NULL, NULL),
-(39, 'Petron', 'Petron', NULL, NULL, NULL),
-(40, 'FullySynthetic', 'FullySynthetic', NULL, NULL, NULL);
+(1, 'rusilogo.png', 'Honda', NULL, NULL, NULL),
+(2, 'rusilogo.png', 'Kawasaki', NULL, NULL, NULL),
+(3, 'rusilogo.png', 'Yamahas', NULL, NULL, NULL),
+(34, 'rusilogo.png', 'Petron', NULL, NULL, NULL),
+(35, 'rusilogo.png', 'Caltex', NULL, NULL, NULL),
+(36, 'rusilogo.png', 'Sk Zic', NULL, NULL, NULL),
+(37, 'rusilogo.png', 'HC TECH', NULL, NULL, NULL),
+(38, 'rusilogo.png', 'CleanSing', NULL, NULL, NULL),
+(39, 'rusilogo.png', 'Petron', NULL, NULL, NULL),
+(40, 'rusilogo.png', 'FullySynthetic', NULL, NULL, NULL),
+(42, 'rusilogo.png', 'asd', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -107,6 +108,45 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2023_02_28_061217_create_transactions_table', 1),
 (8, '2023_02_28_144112_create_invoice_table', 1),
 (9, '2023_02_29_061132_create_productsales_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `motorcycles`
+--
+
+CREATE TABLE `motorcycles` (
+  `id` int(11) NOT NULL,
+  `motor_name` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `motor_engineType` varchar(100) NOT NULL,
+  `motor_displacement` varchar(100) NOT NULL,
+  `motor_startingsystem` varchar(100) NOT NULL,
+  `motor_borestroke` varchar(100) NOT NULL,
+  `motor_brakeTypeFront` varchar(100) NOT NULL,
+  `motor_brakeTypeRear` varchar(100) NOT NULL,
+  `motor_tiresizeFront` varchar(100) NOT NULL,
+  `motor_tiresizeRear` varchar(100) NOT NULL,
+  `motor_wheelType` varchar(100) NOT NULL,
+  `motor_overallDimension` varchar(100) NOT NULL,
+  `motor_curbweight` varchar(100) NOT NULL,
+  `motor_seatheight` varchar(100) NOT NULL,
+  `motor_groundClearance` varchar(100) NOT NULL,
+  `motor_fuelTankCapacity` varchar(100) NOT NULL,
+  `motor_fuelSystem` varchar(100) NOT NULL,
+  `motor_batteryType` varchar(100) NOT NULL,
+  `motor_engineOilCapacity` varchar(100) NOT NULL,
+  `motor_gearShiftPattern` varchar(100) NOT NULL,
+  `motor_description` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `motorcycles`
+--
+
+INSERT INTO `motorcycles` (`id`, `motor_name`, `image`, `motor_engineType`, `motor_displacement`, `motor_startingsystem`, `motor_borestroke`, `motor_brakeTypeFront`, `motor_brakeTypeRear`, `motor_tiresizeFront`, `motor_tiresizeRear`, `motor_wheelType`, `motor_overallDimension`, `motor_curbweight`, `motor_seatheight`, `motor_groundClearance`, `motor_fuelTankCapacity`, `motor_fuelSystem`, `motor_batteryType`, `motor_engineOilCapacity`, `motor_gearShiftPattern`, `motor_description`) VALUES
+(1, 'CBR150R 150R', 'cbr150R.png', '4-Stroke, 4-Valve, DOHC, Liquid-Cooled', '149cc', 'Electric', '57.3 x 57.8 mm', 'Hydraulic Disc with ABS', 'Hydraulic Disc with ABS', '100/80-17M/C 52P (Tubeless)', '130/70-17M/C 62P (Tubeless)', 'Cast Wheel', '1,983 X 700 X 1,090 mm', '138 kg', '\r\n788 mm', '151 mm', '12L', 'PGM-Fi', '\r\n12V 5Ah MF-Wet', '1.3 L', '1-N-2-3-4-5-6 (Down Up)', 'Race like a champion everyday with power and confidence on the road. It has an overall design upgrade with Fireblade-inspired image that will surely ignite your passion in riding.\n\nIt features a new assist/slipper clutch, inverted front fork, and new LED headlight, tail light design, and front winker. On the other hand, it retains its Bank Angle Sensor, a built-in safety feature that automatically turns off the engine when you bank 60° on either sides.\n\nThe New CBR150R comes in Winning Red (Honda Tri-Color) color variant and has a suggested retail price of PhP 183,900.00.\n\nFire Up Your Ride with The New CBR150R!'),
+(2, 'CBR250R 150R', 'cbr150R.png', '4-Stroke, 4-Valve, DOHC, Liquid-Cooled', '149cc', 'Electric', '57.3 x 57.8 mm', 'Hydraulic Disc with ABS', 'Hydraulic Disc with ABS', '100/80-17M/C 52P (Tubeless)', '130/70-17M/C 62P (Tubeless)', 'Cast Wheel', '1,983 X 700 X 1,090 mm', '138 kg', '\r\n788 mm', '151 mm', '12L', 'PGM-Fi', '\r\n12V 5Ah MF-Wet', '1.3 L', '1-N-2-3-4-5-6 (Down Up)', 'Race like a champion everyday with power and confidence on the road. It has an overall design upgrade with Fireblade-inspired image that will surely ignite your passion in riding.\n\nIt features a new assist/slipper clutch, inverted front fork, and new LED headlight, tail light design, and front winker. On the other hand, it retains its Bank Angle Sensor, a built-in safety feature that automatically turns off the engine when you bank 60° on either sides.\n\nThe New CBR150R comes in Winning Red (Honda Tri-Color) color variant and has a suggested retail price of PhP 183,900.00.\n\nFire Up Your Ride with The New CBR150R!');
 
 -- --------------------------------------------------------
 
@@ -251,12 +291,14 @@ INSERT INTO `transactions` (`id`, `transaction_voucher_id`, `transaction_invoice
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_role_id` bigint(20) UNSIGNED NOT NULL,
+  `user_profile` varchar(50) NOT NULL,
   `user_fname` varchar(255) NOT NULL,
   `user_mname` varchar(255) DEFAULT NULL,
   `user_lname` varchar(255) NOT NULL,
   `user_address` varchar(255) NOT NULL,
   `user_contact` varchar(255) NOT NULL,
   `user_DOB` varchar(255) NOT NULL,
+  `isMale` varchar(10) NOT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_username` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
@@ -269,10 +311,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_role_id`, `user_fname`, `user_mname`, `user_lname`, `user_address`, `user_contact`, `user_DOB`, `user_email`, `user_username`, `user_password`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 2, 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'superadmin@gmail.com', 'superadmin', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
-(2, 4, 'myna', '', 'bulawit', 'Conception General Tinio NE.', '09268123667', 'Feb-14-2002', 'branchmanager@gmail.com', 'branchmanager', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
-(3, 1, 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdasd', 'asdasd', 'kfc1010@gmail.com', 'kfc', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `user_role_id`, `user_profile`, `user_fname`, `user_mname`, `user_lname`, `user_address`, `user_contact`, `user_DOB`, `isMale`, `user_email`, `user_username`, `user_password`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'userlogomale.png', 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'male', 'superadmin@gmail.com', 'superadmin', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
+(2, 4, 'userlogofemale.png', 'myna', '', 'bulawit', 'Conception General Tinio NE.', '09268123667', 'Feb-14-2002', 'female', 'branchmanager@gmail.com', 'branchmanager', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
+(3, 1, 'userlogomale.png', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdasd', 'asdasd', 'male', 'kfc1010@gmail.com', 'kfc', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -320,6 +362,12 @@ ALTER TABLE `invoice`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `motorcycles`
+--
+ALTER TABLE `motorcycles`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -377,7 +425,7 @@ ALTER TABLE `vouchers`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `invoice`
@@ -390,6 +438,12 @@ ALTER TABLE `invoice`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `motorcycles`
+--
+ALTER TABLE `motorcycles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
