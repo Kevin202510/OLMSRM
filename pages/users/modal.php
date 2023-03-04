@@ -10,61 +10,72 @@
       <div class="modal-body">
         <form method="post" id="formData">
             <input type="hidden" name="id" id="id">
+            <input type="hidden" name="logo" id="logo">
             <input type="hidden" id="method" name="update">
-            <div class="mb-3">
-                <label class="form-label">Role id</label>
-                <select class="form-control" name="user_role_id" id="user_role_id">
-                    <option>Choose Role</option>
-                    <?php
-                            include_once('../API/DBCRUDAPI.php');
-                            $newAPIFunctions = new DBCRUDAPI();
-                            $newAPIFunctions->select("roles","*");
-                            $rolesList = $newAPIFunctions->sql;
-                        
-                            $index = 1;
-                            while ($roles = mysqli_fetch_assoc($rolesList)){
-                    ?>
+            <div class="row">
+                <div class="col-md-4 text-center"> 
+                <label for="user_profile" class="form-label">Brand Logo
+                    <img id="userprofile" src="../assets/img/profiles/userlogomale.png" onerror="this.onerror=null;this.src='../assets/img/brandlogos/rusilogo.png'" class="img-thumbnail" style="height:300px">
+                    <input class="form-control" style="display:none;" name="user_profile" type="file" id="user_profile">
+                </label>
+              </div>
+            <div class="col-md-8">
+                <div class="mb-3">
+                    <label class="form-label">Role id</label>
+                    <select class="form-control" name="user_role_id" id="user_role_id">
+                        <option>Choose Role</option>
+                        <?php
+                                include_once('../API/DBCRUDAPI.php');
+                                $newAPIFunctions = new DBCRUDAPI();
+                                $newAPIFunctions->select("roles","*");
+                                $rolesList = $newAPIFunctions->sql;
+                            
+                                $index = 1;
+                                while ($roles = mysqli_fetch_assoc($rolesList)){
+                        ?>
 
-                    <option value="<?php echo $roles['id']; ?>"><?php echo $roles['role_display_name']; ?></option>
+                        <option value="<?php echo $roles['id']; ?>"><?php echo $roles['role_display_name']; ?></option>
 
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">First Name</label>
-                <input type="text" class="form-control" id="user_fname" name="user_fname" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Middle Name</label>
-                <input type="text" class="form-control" id="user_mname" name="user_mname" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="user_lname" name="user_lname" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Address</label>
-                <input type="text" class="form-control" id="user_address" name="user_address" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Contact</label>
-                <input type="text" class="form-control" id="user_contact" name="user_contact" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Date Of Birthday</label>
-                <input type="text" class="form-control" id="user_DOB" name="user_DOB" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="text" class="form-control" id="user_email" name="user_email" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" class="form-control" id="user_username" name="user_username" aria-describedby="emailHelp" placeholder="Display Name" >
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="text" class="form-control" id="user_password" name="user_password" aria-describedby="emailHelp" placeholder="Display Name" >
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="user_fname" name="user_fname" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Middle Name</label>
+                    <input type="text" class="form-control" id="user_mname" name="user_mname" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="user_lname" name="user_lname" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" class="form-control" id="user_address" name="user_address" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contact</label>
+                    <input type="text" class="form-control" id="user_contact" name="user_contact" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date Of Birthday</label>
+                    <input type="text" class="form-control" id="user_DOB" name="user_DOB" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" id="user_email" name="user_email" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" id="user_username" name="user_username" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="text" class="form-control" id="user_password" name="user_password" aria-describedby="emailHelp" placeholder="Display Name" >
+                </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -7,6 +7,11 @@ $("body").on("click", "#delete", (e) =>
   state.delete($(e.currentTarget).data("id"))
 );
 
+$("#brand_logo").change(function () {
+  var filename = $("#brand_logo")[0].files[0];
+  $(`[id="brandlogo"]`).attr("src", URL.createObjectURL(filename));
+});
+
 const state = {
   entity: "brands",
   attributes: ["brand_logo", "brand_display_name"],
@@ -44,9 +49,15 @@ const state = {
   },
   save: async (e) => {
     e.preventDefault();
-    let params = $("#formData").serializeArray();
-    // console.log(params);
-    let model = await fetch.save(state.entity, params);
+    var fd = new FormData();
+    var files = $("#brand_logo")[0].files[0];
+    fd.append("file", files);
+    fd.append("id", $("#id").val());
+    fd.append("brand_display_name", $("#brand_display_name").val());
+    fd.append("update", "update");
+    fd.append("logo", $("#logo").val());
+
+    let model = await fetch.save(state.entity, fd);
     if (model) {
       $("#exampleModal").modal("hide");
       state.model = [];
@@ -62,8 +73,15 @@ const state = {
     fetch.showOnModal(state.model[i]);
   },
   update: async () => {
-    let params = $("#formData").serializeArray();
-    let model = await fetch.update(state.entity, params);
+    var fd = new FormData();
+    var files = $("#brand_logo")[0].files[0];
+    fd.append("file", files);
+    fd.append("id", $("#id").val());
+    fd.append("brand_display_name", $("#brand_display_name").val());
+    fd.append("update", "update");
+    fd.append("logo", $("#logo").val());
+
+    let model = await fetch.update(state.entity, fd);
     if (model) {
       $("#exampleModal").modal("hide");
       state.model = [];

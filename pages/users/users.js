@@ -7,6 +7,11 @@ $("body").on("click", "#delete", (e) =>
   state.delete($(e.currentTarget).data("id"))
 );
 
+$("#user_profile").change(function () {
+  var filename = $("#user_profile")[0].files[0];
+  $(`[id="userprofile"]`).attr("src", URL.createObjectURL(filename));
+});
+
 const state = {
   entity: "users",
   attributes: [
@@ -73,7 +78,14 @@ const state = {
   },
   update: async () => {
     let params = $("#formData").serializeArray();
-    let model = await fetch.update(state.entity, params);
+    var fd = new FormData();
+    // console.log(params);
+    params.forEach((para) => {
+      console.log(para);
+      fd.append(para.name, para.value);
+    });
+    fd.append("file", $("#user_profile")[0].files[0]);
+    let model = await fetch.update(state.entity, fd);
     if (model) {
       $("#exampleModal").modal("hide");
       state.model = [];
