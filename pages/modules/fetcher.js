@@ -12,6 +12,8 @@ const request = async (url, params, method = "GET") => {
       url: url,
       type: method,
       data: params,
+      contentType: false,
+      processData: false,
     });
 
     if (response.status === 404 || response.status === 500) {
@@ -133,7 +135,11 @@ const showOnModal = (model) => {
   $("#modal-title").html(`Update`);
   // console.log(model);
   Object.keys(model).map((key) => {
-    if ($(`[name='${key}']`).length !== 0 && key != "avatar") {
+    if (
+      $(`[name='${key}']`).length !== 0 &&
+      key != "brand_logo" &&
+      key != "user_profile"
+    ) {
       if (typeof model[key] == "boolean") {
         $(`[name='${key}']`).val(model[key] ? 1 : 0);
       } else {
@@ -141,6 +147,18 @@ const showOnModal = (model) => {
           $(`[name='${key}']`).val(model[key]).removeAttr("disabled");
         }
       }
+    } else if (key == "brand_logo") {
+      $(`[id="brandlogo"]`).attr(
+        "src",
+        `../assets/img/brandlogos/${model[key]}`
+      );
+      $(`[name='logo']`).val(model[key]).removeAttr("disabled");
+    } else if (key == "user_profile") {
+      $(`[id="userprofile"]`).attr(
+        "src",
+        `../assets/img/profiles/${model[key]}`
+      );
+      $(`[name='logo']`).val(model[key]).removeAttr("disabled");
     }
   });
   $("#exampleModal").modal("show");
