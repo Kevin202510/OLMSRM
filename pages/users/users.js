@@ -10,6 +10,8 @@ $("body").on("click", "#delete", (e) =>
 const state = {
   entity: "users",
   attributes: [
+    "user_profile",
+    "isMale",
     "role_display_name",
     "fullName",
     "user_address",

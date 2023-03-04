@@ -3,7 +3,7 @@
     include_once('../../API/DBCRUDAPI.php');
     $DBCRUDAPI = new DBCRUDAPI();
 
-    $attributes = ["users.id","users.user_role_id","roles.role_display_name","users.user_fname","users.user_mname","users.user_lname","users.user_address","users.user_contact","users.user_DOB","users.user_email","users.user_username","users.user_password","users.created_at"];
+    $attributes = ["users.id","users.user_role_id","user_profile","isMale","roles.role_display_name","users.user_fname","users.user_mname","users.user_lname","users.user_address","users.user_contact","users.user_DOB","users.user_email","users.user_username","users.user_password","users.created_at"];
     if(isset($_GET['getData'])){
         $DBCRUDAPI->selectleftjoin100("users","roles","id","user_role_id",$attributes);
         $data = $DBCRUDAPI->sql;

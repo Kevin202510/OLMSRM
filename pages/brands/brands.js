@@ -9,7 +9,7 @@ $("body").on("click", "#delete", (e) =>
 
 const state = {
   entity: "brands",
-  attributes: ["brand_display_name", "brand_logo"],
+  attributes: ["brand_logo", "brand_display_name"],
   model: [],
   activeIndex: 0,
   btnSave: document.getElementById("btn-mul"),

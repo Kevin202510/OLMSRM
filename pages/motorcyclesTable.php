@@ -19,7 +19,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>List of Motorcycles</h4>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                <button type="button" class="btn btn-primary" id="create-new">
                                     Add Motorcycles
                                 </button>
                             </div>
@@ -30,13 +30,12 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Role Name</th>
-                                    <th scope="col">Full Name</th>
-                                    <th scope="col">Address</th>
-                                    <th scope="col">Contact</th>
-                                    <th scope="col">DOB</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Motorcycle Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Engine Type</th>
+                                    <th scope="col">Displacement</th>
+                                    <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody id="main-table">
@@ -53,5 +52,5 @@
             <?php include('footer.php'); ?>
         </div>
     </div>
-<script src="users/users.js"></script>
+<script type="module" src="motorcycles/motorcycles.js"></script>
 <?php include('script.php'); ?>

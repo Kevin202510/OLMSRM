@@ -35,6 +35,7 @@
                                 <thead>
                                     <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Profile</th>
                                     <th scope="col">RoleName</th>
                                     <th scope="col">Fullname</th>
                                     <th scope="col">Address</th>

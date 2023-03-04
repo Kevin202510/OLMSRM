@@ -63,6 +63,39 @@ const writer = (attributes, modelss) => {
           attriMap.get("user_lname")
         ).toUpperCase(),
       }).appendTo(tr);
+    } else if (attri === "image") {
+      let td2 = $("<td>", { class: "text-wrap" });
+      $("<img>", {
+        class: "img-thumbnail",
+        src: `../assets/img/motorcycles/${attriMap.get(attri)}`,
+      }).appendTo(td2);
+      td2.appendTo(tr);
+    } else if (attri === "brand_logo") {
+      let td2 = $("<td>", { class: "text-wrap" });
+      $("<img>", {
+        class: "img-thumbnail",
+        style: "width:80px",
+        src: `../assets/img/brandlogos/${attriMap.get(attri)}`,
+      }).appendTo(td2);
+      td2.appendTo(tr);
+    } else if (attri === "user_profile") {
+      if (attriMap.get("isMale") == "male") {
+        let td2 = $("<td>", { class: "text-wrap" });
+        $("<img>", {
+          class: "img-thumbnail",
+          style: "width:80px",
+          src: `../assets/img/profiles/${attriMap.get("user_profile")}`,
+        }).appendTo(td2);
+        td2.appendTo(tr);
+      } else {
+        let td2 = $("<td>", { class: "text-wrap" });
+        $("<img>", {
+          class: "img-thumbnail",
+          style: "width:80px",
+          src: `../assets/img/profiles/${attriMap.get("user_profile")}`,
+        }).appendTo(td2);
+        td2.appendTo(tr);
+      }
     } else {
       $("<td>", { class: "text-wrap", html: attriMap.get(attri) }).appendTo(tr);
     }
