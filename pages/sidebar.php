@@ -31,7 +31,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="pointofsale.php?invoice=<?php echo $finalcode ?>">Cashier</a>
-                        <a class="collapse-item" href="salesTable.php">Purchase Motorcycle</a>
+                        <a class="collapse-item" href="purchaseMotorcycleTable.php">Purchase Motorcycle</a>
                         <a class="collapse-item" href="salesTable.php">Sales</a>
                     </div>
                 </div>
