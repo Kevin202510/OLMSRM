@@ -64,48 +64,48 @@
                         <div class="tab-content">
                             <div class="tab-pane" id="about">
                               <div class="row">
-                                  <h4 class="info-text"> Let's start with the basic information (with validation)</h4>
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
-                                  </div>
-                              </div>
+                                    <h4 class="info-text"> Applicant Background Information </h4>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                             <div class="tab-pane" id="account">
                                 <h4 class="info-text"> What are you doing? (checkboxes) </h4>
