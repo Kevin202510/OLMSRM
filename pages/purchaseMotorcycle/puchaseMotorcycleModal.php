@@ -65,7 +65,7 @@ s
                             <div class="tab-pane" id="about">
                               <div class="row">
                                   <h4 class="info-text"> Let's start with the basic information (with validation)</h4>
-                                  <!-- <div class="col-sm-4 col-sm-offset-1">
+                                  <div class="col-sm-4 col-sm-offset-1">
                                      <div class="picture-container">
                                           <div class="picture">
                                               <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
@@ -73,7 +73,8 @@ s
                                           </div>
                                           <h6>Choose Picture</h6>
                                       </div>
-                                  </div> -->
+                                  </div>
+                                  <div class="row">
                                   <div class="col-sm-6">
                                       <div class="form-group">
                                         <label>First Name <small>(required)</small></label>
@@ -84,76 +85,11 @@ s
                                         <input name="lastname" type="text" class="form-control" placeholder="Smith...">
                                       </div>
                                   </div>
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
                                   </div>
-                              </div>
-                              <div class="row">
-                                  <!-- <div class="col-sm-4 col-sm-offset-1">
-                                     <div class="picture-container">
-                                          <div class="picture">
-                                              <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                                              <input type="file" id="wizard-picture">
-                                          </div>
-                                          <h6>Choose Picture</h6>
-                                      </div>
-                                  </div> -->
-                                  <div class="col-sm-6">
+                                  <div class="col-sm-10 col-sm-offset-1">
                                       <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <!-- <div class="col-sm-4 col-sm-offset-1">
-                                     <div class="picture-container">
-                                          <div class="picture">
-                                              <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                                              <input type="file" id="wizard-picture">
-                                          </div>
-                                          <h6>Choose Picture</h6>
-                                      </div>
-                                  </div> -->
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
-                                      </div>
-                                  </div>
-                                  <div class="col-sm-6">
-                                      <div class="form-group">
-                                        <label>First Name <small>(required)</small></label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="Andrew...">
-                                      </div>
-                                      <div class="form-group">
-                                        <label>Last Name <small>(required)</small></label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="Smith...">
+                                          <label>Email <small>(required)</small></label>
+                                          <input name="email" type="email" class="form-control" placeholder="andrew@creative-tim.com">
                                       </div>
                                   </div>
                               </div>
