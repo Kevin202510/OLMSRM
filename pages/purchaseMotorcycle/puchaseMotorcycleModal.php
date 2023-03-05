@@ -16,7 +16,7 @@
 	<!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
-
+s
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="assets/css/demo.css" rel="stylesheet" />
 </head>
