@@ -63,86 +63,169 @@
 
                         <div class="tab-content">
                             <div class="tab-pane" id="about">
-                              <div class="row">
+                                <div class="row">
                                     <h4 class="info-text"> Applicant Background Information </h4>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_fname</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_mname</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_lname</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_age</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_dob</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_smarried</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_religion</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_nickname</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_pres_address</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_paddress</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_haddress</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_bplace</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <input name="fname" type="text" class="form-control" placeholder="New York...">
-                                    </div>
-                                </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="account">
                                 <h4 class="info-text"> What are you doing? (checkboxes) </h4>
                                 <div class="row">
-
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <div class="col-sm-4">
-                                            <div class="choice" data-toggle="wizard-checkbox">
-                                                <input type="checkbox" name="jobb" value="Design">
-                                                <div class="icon">
-                                                    <i class="fa fa-pencil"></i>
-                                                </div>
-                                                <h6>Design</h6>
-                                            </div>
+                                    <h4 class="info-text"> Applicant Background Information </h4>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_nodc</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="choice" data-toggle="wizard-checkbox">
-                                                <input type="checkbox" name="jobb" value="Code">
-                                                <div class="icon">
-                                                    <i class="fa fa-terminal"></i>
-                                                </div>
-                                                <h6>Code</h6>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="choice" data-toggle="wizard-checkbox">
-                                                <input type="checkbox" name="jobb" value="Develop">
-                                                <div class="icon">
-                                                    <i class="fa fa-laptop"></i>
-                                                </div>
-                                                <h6>Develop</h6>
-                                            </div>
-
+                                        <div class="form-group">
+                                            <label>app_ohl</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                     </div>
-
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_lor</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_ohrl</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_oname</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_loresidences</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_cnumber</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_firm</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_address</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_position</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_salary</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_loservices</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_bname</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_baddress</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_lobusiness</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_swo</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_capital</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>app_nincome</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>app_oincome</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="address">
