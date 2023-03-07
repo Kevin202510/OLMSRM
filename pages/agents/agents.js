@@ -1,4 +1,4 @@
-import fetch from "../modules/fetcher.js";
+import fetch from "../modules/fetcher1.js";
 
 $("body").on("click", "#edit", async (e) =>
   state.show($(e.currentTarget).data("id"))
@@ -9,10 +9,7 @@ $("body").on("click", "#delete", (e) =>
 
 const state = {
   entity: "agents",
-  attributes: ["agent_name"],
-  attributes: ["agent_address"],
-  attributes: ["agent_contact"],
-  attributes: ["agent_since_when"],
+  attributes: ["agent_name", "agent_address","agent_contact", "agent_since_when"],
   model: [],
   activeIndex: 0,
   btnSave: document.getElementById("btn-mul"),

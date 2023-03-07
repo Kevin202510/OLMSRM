@@ -35,7 +35,7 @@
             $agent_contact = $_POST["agent_contact"];
             $agent_since_when = $_POST["agent_since_when"];
 
-            $DBCRUDAPI->update('agents',['agent_name'=>$agent_name, 'agent_address'=>$agent_address, 'agent_contact'=>$agent_contact, 'agent_since_when'=>$agent_since_when],"id='$role_id'");
+            $DBCRUDAPI->update('agents',['agent_name'=>$agent_name, 'agent_address'=>$agent_address, 'agent_contact'=>$agent_contact, 'agent_since_when'=>$agent_since_when],"id='$agent_id'");
              if($DBCRUDAPI){
                 echo json_encode(array("success"=>true));
             }else{
@@ -45,7 +45,7 @@
             
             $agent_id = $_POST["id"];
 
-            $DBCRUDAPI->delete('agent',"id='$agent_id'");
+            $DBCRUDAPI->delete('agents',"id='$agent_id'");
              if($DBCRUDAPI){
                 echo json_encode(array("success"=>true));
             }else{
