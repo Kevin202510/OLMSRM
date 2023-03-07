@@ -67,61 +67,71 @@
                                     <h4 class="info-text"> Applicant Background Information </h4>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>app_fname</label>
+                                            <label>First Name</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                         <div class="form-group">
-                                            <label>app_mname</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label>app_lname</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>app_age</label>
+                                            <label>Middle Name</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>app_dob</label>
+                                            <label>Last Name</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                         <div class="form-group">
-                                            <label>app_smarried</label>
+                                            <label>DOB</label>
+                                            <input name="fname" type="date" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>is Married</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Religion</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>app_religion</label>
+                                            <label>Nickname</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                         <div class="form-group">
-                                            <label>app_nickname</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label>app_pres_address</label>
-                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>app_paddress</label>
+                                            <label>Present Address</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>app_haddress</label>
+                                            <label>Previous Address</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                         <div class="form-group">
-                                            <label>app_bplace</label>
+                                            <label>Home Address</label>
+                                            <input name="fname" type="date" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Birth Place</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>is Own House & Lot</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Length of Residency</label>
+                                            <input name="fname" type="text" class="form-control" placeholder="New York...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contact Number</label>
                                             <input name="fname" type="text" class="form-control" placeholder="New York...">
                                         </div>
                                     </div>

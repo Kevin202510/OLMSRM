@@ -4,7 +4,7 @@
     $DBCRUDAPI = new DBCRUDAPI();
 
     if(isset($_GET['getData'])){
-        $DBCRUDAPI->select("vouchers","*");
+        $DBCRUDAPI->select("vouchers","*","id!=0");
         $data = $DBCRUDAPI->sql;
         $res = array();
         while($datass = mysqli_fetch_assoc($data)){

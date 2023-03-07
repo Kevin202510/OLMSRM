@@ -1,4 +1,4 @@
-import fetch from "../modules/fetcher.js";
+import fetch from "../modules/fetcher1.js";
 
 $("body").on("click", "#edit", async (e) =>
   state.show($(e.currentTarget).data("id"))
@@ -9,7 +9,12 @@ $("body").on("click", "#delete", (e) =>
 
 const state = {
   entity: "vouchers",
-  attributes: ["voucher_code" , "voucher_description" , "voucher_discount" , "voucher_isActive"],
+  attributes: [
+    "voucher_code",
+    "voucher_description",
+    "voucher_discount",
+    "voucher_isActive",
+  ],
   model: [],
   activeIndex: 0,
   btnSave: document.getElementById("btn-mul"),

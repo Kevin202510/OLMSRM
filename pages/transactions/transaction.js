@@ -1,4 +1,4 @@
-import fetch from "../modules/fetcher.js";
+import fetch from "../modules/fetcher1.js";
 
 $("body").on("click", "#edit", async (e) =>
   state.show($(e.currentTarget).data("id"))

@@ -62,10 +62,13 @@
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
-        public function selectleftjoin100($table,$table1,$attributename1,$attributename,$attributesName){
+        public function selectleftjoin100($table,$table1,$attributename1,$attributename,$attributesName,$where = null){
             $attributes = implode(',', $attributesName);
-            $sql = "SELECT $attributes FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename";
-
+            if ($where != null) {
+                $sql = "SELECT $attributes FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename $where";
+            }else{
+                $sql = "SELECT $attributes FROM $table LEFT JOIN $table1 ON $table1.$attributename1=$table.$attributename";
+            }
             $this->sql = $result = $this->mysqli->query($sql);
         }
 
