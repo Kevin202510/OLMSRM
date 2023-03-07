@@ -36,7 +36,20 @@ const state = {
         $.each(datas, function (index, value) {
           state.model.push(value);
         });
-        state.model.forEach((models) => fetch.writer(state.attributes, models));
+        if (state.model.length != 0) {
+          state.model.forEach((models) =>
+            fetch.writer(state.attributes, models)
+          );
+        } else {
+          let tr = $("<tr>", {
+            id: `model-0`,
+            "data-index": 0,
+          });
+          $("<td>", { class: "text-wrap", html: "NO AVAILABLE DATA" }).appendTo(
+            tr
+          );
+          $("#main-table").append(tr);
+        }
       }
     );
   },

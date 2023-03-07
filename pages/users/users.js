@@ -16,7 +16,6 @@ const state = {
   entity: "users",
   attributes: [
     "user_profile",
-    "isMale",
     "role_display_name",
     "fullName",
     "user_address",
@@ -50,7 +49,6 @@ const state = {
     );
   },
   addnew: () => {
-    console.log(md5(state.model[0].user_password));
     state.btnSave.innerHTML = "Save Changes";
     state.inputMethod.setAttribute("name", "addNew");
     state.btnSave.addEventListener("click", state.save);
@@ -60,8 +58,14 @@ const state = {
   save: async (e) => {
     e.preventDefault();
     let params = $("#formData").serializeArray();
+    var fd = new FormData();
     // console.log(params);
-    let model = await fetch.save(state.entity, params);
+    params.forEach((para) => {
+      fd.append(para.name, para.value);
+    });
+    fd.append("file", $("#user_profile")[0].files[0]);
+
+    let model = await fetch.save(state.entity, fd);
     if (model) {
       $("#exampleModal").modal("hide");
       state.model = [];
@@ -81,7 +85,6 @@ const state = {
     var fd = new FormData();
     // console.log(params);
     params.forEach((para) => {
-      console.log(para);
       fd.append(para.name, para.value);
     });
     fd.append("file", $("#user_profile")[0].files[0]);

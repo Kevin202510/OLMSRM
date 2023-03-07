@@ -1,4 +1,4 @@
-const request = async (url, params, method = "GET") => {
+const request = async (url, params, method = "GET", trick) => {
   const options = { method, headers: { "Content-Type": "application/json" } };
   if (params && method === "GET") {
     url += params != "" ? `?${objectToQueryString(params)}` : "";
@@ -8,13 +8,21 @@ const request = async (url, params, method = "GET") => {
   let response;
 
   try {
-    response = await $.ajax({
-      url: url,
-      type: method,
-      data: params,
-      contentType: false,
-      processData: false,
-    });
+    if (trick === "delete") {
+      response = await $.ajax({
+        url: url,
+        type: method,
+        data: params,
+      });
+    } else {
+      response = await $.ajax({
+        url: url,
+        type: method,
+        data: params,
+        contentType: false,
+        processData: false,
+      });
+    }
 
     if (response.status === 404 || response.status === 500) {
       swal.fire({
@@ -215,7 +223,7 @@ const remove = async (entity, params) => {
 
   // alert(result);
   if (result) {
-    const model = await request(url, params, "POST");
+    const model = await request(url, params, "POST", "delete");
     if (model) {
       swal.fire({
         position: "center",

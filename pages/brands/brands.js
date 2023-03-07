@@ -49,13 +49,13 @@ const state = {
   },
   save: async (e) => {
     e.preventDefault();
+    let params = $("#formData").serializeArray();
     var fd = new FormData();
-    var files = $("#brand_logo")[0].files[0];
-    fd.append("file", files);
-    fd.append("id", $("#id").val());
-    fd.append("brand_display_name", $("#brand_display_name").val());
-    fd.append("update", "update");
-    fd.append("logo", $("#logo").val());
+    // console.log(params);
+    params.forEach((para) => {
+      fd.append(para.name, para.value);
+    });
+    fd.append("file", $("#brand_logo")[0].files[0]);
 
     let model = await fetch.save(state.entity, fd);
     if (model) {
@@ -73,14 +73,13 @@ const state = {
     fetch.showOnModal(state.model[i]);
   },
   update: async () => {
+    let params = $("#formData").serializeArray();
     var fd = new FormData();
-    var files = $("#brand_logo")[0].files[0];
-    fd.append("file", files);
-    fd.append("id", $("#id").val());
-    fd.append("brand_display_name", $("#brand_display_name").val());
-    fd.append("update", "update");
-    fd.append("logo", $("#logo").val());
-
+    // console.log(params);
+    params.forEach((para) => {
+      fd.append(para.name, para.value);
+    });
+    fd.append("file", $("#brand_logo")[0].files[0]);
     let model = await fetch.update(state.entity, fd);
     if (model) {
       $("#exampleModal").modal("hide");
