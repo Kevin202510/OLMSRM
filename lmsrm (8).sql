@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2023 at 11:11 AM
+-- Generation Time: Mar 07, 2023 at 01:13 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,83 +24,80 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `applicants`
+-- Table structure for table `agents`
 --
 
-CREATE TABLE `applicants` (
-  `id` int(100) NOT NULL,
-  `app_fname` varchar(100) NOT NULL,
-  `app_mname` varchar(100) NOT NULL,
-  `app_lname` varchar(100) NOT NULL,
-  `app_age` varchar(100) NOT NULL,
-  `app_dob` varchar(100) NOT NULL,
-  `app_smarried` varchar(100) NOT NULL,
-  `app_religion` varchar(100) NOT NULL,
-  `app_nickname` varchar(100) NOT NULL,
-  `app_pres_address` varchar(100) NOT NULL,
-  `app_paddress` varchar(100) NOT NULL,
-  `app_haddress` varchar(100) NOT NULL,
-  `app_bplace` varchar(100) NOT NULL,
-  `app_nodc` varchar(100) NOT NULL,
-  `app_ohl` varchar(100) NOT NULL,
-  `app_lor` varchar(100) NOT NULL,
-  `app_ohrl` varchar(100) NOT NULL,
-  `app_oname` varchar(100) NOT NULL,
-  `app_loresidences` varchar(100) NOT NULL,
-  `app_cnumber` varchar(11) NOT NULL,
-  `app_firm` varchar(100) NOT NULL,
-  `app_address` varchar(100) NOT NULL,
-  `app_position` varchar(100) NOT NULL,
-  `app_salary` varchar(100) NOT NULL,
-  `app_loservices` varchar(100) NOT NULL,
-  `app_bname` varchar(100) NOT NULL,
-  `app_baddress` varchar(100) NOT NULL,
-  `app_lobusiness` varchar(100) NOT NULL,
-  `app_swo` varchar(100) NOT NULL,
-  `app_capital` varchar(100) NOT NULL,
-  `app_nincome` varchar(100) NOT NULL,
-  `app_oincome` varchar(100) NOT NULL
+CREATE TABLE `agents` (
+  `id` int(11) NOT NULL,
+  `agent_name` varchar(255) NOT NULL,
+  `agent_address` varchar(255) NOT NULL,
+  `agent_contact` varchar(255) NOT NULL,
+  `agent_since_when` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `applicants_spouse`
+-- Table structure for table `applicants`
 --
 
-CREATE TABLE `applicants_spouse` (
+CREATE TABLE `applicants` (
+  `id` int(11) NOT NULL,
+  `applicant_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `applicants_informations`
+--
+
+CREATE TABLE `applicants_informations` (
   `id` int(100) NOT NULL,
-  `app_fname` varchar(100) NOT NULL,
-  `app_mname` varchar(100) NOT NULL,
-  `app_lname` varchar(100) NOT NULL,
-  `app_age` varchar(100) NOT NULL,
-  `app_dob` varchar(100) NOT NULL,
-  `app_smarried` varchar(100) NOT NULL,
-  `app_religion` varchar(100) NOT NULL,
-  `app_nickname` varchar(100) NOT NULL,
-  `app_pres_address` varchar(100) NOT NULL,
-  `app_paddress` varchar(100) NOT NULL,
-  `app_haddress` varchar(100) NOT NULL,
-  `app_bplace` varchar(100) NOT NULL,
-  `app_nodc` varchar(100) NOT NULL,
-  `app_ohl` varchar(100) NOT NULL,
-  `app_lor` varchar(100) NOT NULL,
-  `app_ohrl` varchar(100) NOT NULL,
-  `app_oname` varchar(100) NOT NULL,
-  `app_loresidences` varchar(100) NOT NULL,
-  `app_cnumber` varchar(11) NOT NULL,
-  `app_firm` varchar(100) NOT NULL,
-  `app_address` varchar(100) NOT NULL,
-  `app_position` varchar(100) NOT NULL,
-  `app_salary` varchar(100) NOT NULL,
-  `app_loservices` varchar(100) NOT NULL,
-  `app_bname` varchar(100) NOT NULL,
-  `app_baddress` varchar(100) NOT NULL,
-  `app_lobusiness` varchar(100) NOT NULL,
-  `app_swo` varchar(100) NOT NULL,
-  `app_capital` varchar(100) NOT NULL,
-  `app_nincome` varchar(100) NOT NULL,
-  `app_oincome` varchar(100) NOT NULL
+  `app_fname` varchar(255) NOT NULL,
+  `app_lname` varchar(255) NOT NULL,
+  `app_mname` varchar(255) NOT NULL,
+  `app_DOB` varchar(255) NOT NULL,
+  `app_isMarried` int(11) NOT NULL DEFAULT 0,
+  `app_religion` varchar(255) NOT NULL,
+  `app_nickname` varchar(255) NOT NULL,
+  `app_present_add` varchar(255) NOT NULL,
+  `app_previous_add` varchar(255) NOT NULL,
+  `app_home_add` varchar(255) NOT NULL,
+  `app_birth_place` varchar(255) NOT NULL,
+  `app_isOwnHouseLot` int(11) NOT NULL DEFAULT 0,
+  `app_length_of_residency` int(11) NOT NULL,
+  `app_contact` varchar(15) NOT NULL,
+  `app_isEmployed` int(11) NOT NULL DEFAULT 0,
+  `app_firm` varchar(255) DEFAULT NULL,
+  `app_address` varchar(255) DEFAULT NULL,
+  `app_position` varchar(255) DEFAULT NULL,
+  `app_salary` double DEFAULT NULL,
+  `app_length_of_service` int(11) DEFAULT NULL,
+  `app_isBusiness` int(11) NOT NULL DEFAULT 0,
+  `app_business_name` varchar(255) DEFAULT NULL,
+  `app_business_address` varchar(255) DEFAULT NULL,
+  `app_business_line` varchar(255) DEFAULT NULL,
+  `app_sinceWhen` varchar(255) DEFAULT NULL,
+  `app_capital` double DEFAULT NULL,
+  `app_net_income` double NOT NULL,
+  `app_other_income` varchar(255) NOT NULL,
+  `app_father_name` varchar(255) DEFAULT NULL,
+  `app_father_DOB` varchar(255) DEFAULT NULL,
+  `app_father_occupation` varchar(255) DEFAULT NULL,
+  `app_mother_name` varchar(255) DEFAULT NULL,
+  `app_mother_DOB` varchar(255) DEFAULT NULL,
+  `app_mother_occupation` varchar(255) DEFAULT NULL,
+  `app_co_maker_name` varchar(255) NOT NULL,
+  `app_co_maker_address` varchar(255) NOT NULL,
+  `app_co_maker_contact` varchar(15) NOT NULL,
+  `app_agent_id` int(11) DEFAULT NULL,
+  `app_signature` varchar(255) NOT NULL,
+  `app_valid_id` int(11) NOT NULL,
+  `app_tin_number` varchar(255) DEFAULT NULL,
+  `app_sss_number` varchar(255) DEFAULT NULL,
+  `app_email_add` varchar(255) DEFAULT NULL,
+  `app_facebook_acc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -124,7 +121,7 @@ CREATE TABLE `brands` (
 
 INSERT INTO `brands` (`id`, `brand_logo`, `brand_display_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Rusi boxer motorcycle.jpg', 'Honda', NULL, NULL, NULL),
-(2, 'rusilogo.png', 'Kawasaki', NULL, NULL, NULL),
+(2, 'Picture1.png', 'Kawasaki', NULL, NULL, NULL),
 (3, 'rusilogo.png', 'Yamahas', NULL, NULL, NULL),
 (34, 'rusilogo.png', 'Petron', NULL, NULL, NULL),
 (35, 'rusilogo.png', 'Caltex', NULL, NULL, NULL),
@@ -162,7 +159,8 @@ INSERT INTO `invoice` (`invoice_id`, `invoice_number`, `product_id`, `quantity`,
 (31, 'RS-22230', 16, 1, 350, NULL, NULL),
 (32, 'RS-22230', 15, 1, 250, NULL, NULL),
 (33, 'RS-22230', 17, 1, 200, NULL, NULL),
-(34, 'RS-2330', 12, 1, 38, NULL, NULL);
+(34, 'RS-2330', 12, 1, 38, NULL, NULL),
+(35, 'RS-72932', 12, 1, 38, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -394,7 +392,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_role_id`, `user_profile`, `user_fname`, `user_mname`, `user_lname`, `user_address`, `user_contact`, `user_DOB`, `isMale`, `user_email`, `user_username`, `user_password`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, '2TPOWERBURN.jpg', 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'male', 'superadmin@gmail.com', 'superadmin', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
+(1, 1, 'WIN_20221215_17_51_23_Pro.jpg', 'kevin', 'felix', 'caluag', 'Bago General Tinio NE', '09261364720', 'Jan-13-2001', 'male', 'superadmin@gmail.com', 'superadmin', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
 (2, 4, 'myna.jpg', 'myna', '', 'bulawit', 'Conception General Tinio NE.', '09268123667', 'Feb-14-2002', 'female', 'branchmanager@gmail.com', 'branchmanager', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
 (3, 1, 'userlogomale.png', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasdasd', 'asdasd', 'male', 'kfc1010@gmail.com', 'kfc', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL);
 
@@ -428,15 +426,22 @@ INSERT INTO `vouchers` (`id`, `voucher_code`, `voucher_description`, `voucher_di
 --
 
 --
--- Indexes for table `applicants`
+-- Indexes for table `agents`
 --
-ALTER TABLE `applicants`
+ALTER TABLE `agents`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `applicants_spouse`
+-- Indexes for table `applicants`
 --
-ALTER TABLE `applicants_spouse`
+ALTER TABLE `applicants`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `applicants_app_info_id` (`applicant_id`);
+
+--
+-- Indexes for table `applicants_informations`
+--
+ALTER TABLE `applicants_informations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -516,16 +521,22 @@ ALTER TABLE `vouchers`
 --
 
 --
+-- AUTO_INCREMENT for table `agents`
+--
+ALTER TABLE `agents`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `applicants`
 --
 ALTER TABLE `applicants`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `applicants_spouse`
+-- AUTO_INCREMENT for table `applicants_informations`
 --
-ALTER TABLE `applicants_spouse`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `applicants_informations`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brands`
@@ -537,7 +548,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `invoice_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -596,6 +607,12 @@ ALTER TABLE `vouchers`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `applicants`
+--
+ALTER TABLE `applicants`
+  ADD CONSTRAINT `applicants_app_info_id` FOREIGN KEY (`applicant_id`) REFERENCES `applicants_informations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `invoice`
