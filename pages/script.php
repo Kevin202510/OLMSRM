@@ -41,7 +41,7 @@
                 "authentication/authenticationFunction.php",
                 {logoutUser:"logoutUser"},
                 function (data, status) {
-                    window.location.href = "login.php";
+                    window.location.href = "../index.php";
                 }
                 );
             });
